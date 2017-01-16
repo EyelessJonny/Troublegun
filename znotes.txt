@@ -1,0 +1,40 @@
+Resources:
+    -PEP: PEP 8
+    -Packages: atom-python-run
+    -Themes: nucleus-dark-ui
+                      spacegray-atom-dark-syntax
+    -Font: Ubuntu
+
+Misc:
+     - Ask about doing all tasks in 1 program in reverse order.
+     - Ask what level of usability to efficiency is required (e.g. GUI or not?).
+     - Ask if more or less files are preferable.
+     - Ask what runtimes are available to the end user (e.g. Java or Python?).
+     - Ask if Github is allowed.
+
+Task 1:
+    - Welcome's end user to program.
+    - Goes through troubleshooting questions looking for substrings:
+            - Software or Hardware/Firmware?
+            - Stuck updating?, Malware?, Data loss?
+            - Boot-loop? Bricked? Charged?
+    - Print solution, if not accepted go to top.
+    Footnote: Windows Form Application with a check box list or profiling your user.
+
+Task 2:
+    - Welcome's end user to program.
+    - User inputs problem.
+    -Check if keywords are in txt file:
+            - "Cracked"
+            - "Boot-loop"
+            - "Display"
+    - Print solution, if not accepted go to top.
+    Footnote: LMGTFY or any bash script or batch file.
+
+Task 3:
+    - Welcome's end user to program.
+    - User inputs device model.
+    - System checks device model against txt file.
+            - If successful load file of suitable questions and responses for that device.
+            - If unsuccessful allow them to retry, if unsuccessful a second time send to tech.
+    Footnote: Ignore Windows devices for this.
