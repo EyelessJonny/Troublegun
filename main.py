@@ -18,7 +18,9 @@ class Main:
                               "Is your device infected with malware?\n",
                               "\n")
         self.os = str
+        self.warranty = str
         self.turned_on = bool
+        self.exterior = str
 
     def welcome(self):
         print("Welcome to Troublegun v{} made by {}.\n\n\nThe following questions"
@@ -37,17 +39,21 @@ class Main:
             else:
                 print ("I'm sorry I didn't understand, restarting...\n\n")
                 main.mainF()
+                return
             """Warranty?"""
             userinput = str.upper(str(input(self.que[1])))
             if (userinput == "YES"):
                 print ("YES selected!\n")
+                self.warranty = "In warranty"
                 main.solution(0)
                 return
             elif (userinput == "NO"):
                 print ("NO selected!\n")
+                self.warranty = "Out of warranty"
             else:
                 print ("I'm sorry I didn't understand, restarting...\n\n")
                 main.mainF()
+                return
             """Powered on?"""
             userinput = str.upper(str(input(self.que[2])))
             if (userinput == "YES"):
@@ -64,6 +70,7 @@ class Main:
                 else:
                     print ("I'm sorry I didn't understand, restarting...\n\n")
                     main.mainF()
+                    return
             elif (userinput == "NO"):
                 print ("NO selected!\n")
                 self.turned_on = False
@@ -99,8 +106,7 @@ class Main:
                 return
             """No problems"""
             print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
-                        ""
-                        )
+                        "Operating System: {}\nWarranty: ")
         except:
             print("Something went wrong, restarting...\n\n")
             main.MainF()
