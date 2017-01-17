@@ -6,11 +6,7 @@ Resources:
     -Font: Ubuntu
 
 Misc:
-     - Ask about doing all tasks in 1 program in reverse order.
-     - Ask what level of usability to efficiency is required (e.g. GUI or not?).
-     - Ask if more or less files are preferable.
-     - Ask what runtimes are available to the end user (e.g. Java or Python?).
-     - Ask if Github is allowed.
+     - Nothing misc.
 
 Task 1:
     - Welcome's end user to program.
