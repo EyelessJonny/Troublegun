@@ -1,6 +1,6 @@
 #A Python program to help troubleshoot mobile device issues automatically.
 __author__ = "Jonny"
-__version__ = "0.01"
+__version__ = "0.02"
 
 from sys import exit
 from time import sleep
@@ -8,6 +8,8 @@ from time import sleep
 class Main:
     """Main class for project; handles everything."""
     def __init__(self):
+        print("Welcome to Troublegun v{} made by {}.\n\n\nThe following questions"
+                   " will help shoot your troubles:\n " .format(__version__, __author__))
         self.que = ("What operating system does your mobile device use: 'ANDROID', "
                               "OR 'IOS'.\n",
                               "Is your device under warranty? 'YES' or 'NO'\n",
@@ -19,14 +21,11 @@ class Main:
                               "\n")
         self.os = str
         self.warranty = str
-        self.turned_on = bool
+        self.power = str
         self.exterior = str
 
-    def welcome(self):
-        print("Welcome to Troublegun v{} made by {}.\n\n\nThe following questions"
-                   " will help shoot your troubles:\n " .format(__version__, __author__))
-
     def mainF(self):
+        """Questioning fuction"""
         try:
             """What OS?"""
             userinput = str.upper(str(input(self.que[0])))
@@ -58,7 +57,7 @@ class Main:
             userinput = str.upper(str(input(self.que[2])))
             if (userinput == "YES"):
                 print ("YES selected!\n")
-                self.turned_on = True
+                self.power = "Powered"
                 """Turn it off and on?"""
                 userinput = str.upper(str(input(self.que[3])))
                 if (userinput == "YES"):
@@ -73,7 +72,7 @@ class Main:
                     return
             elif (userinput == "NO"):
                 print ("NO selected!\n")
-                self.turned_on = False
+                self.power = "Un-powered"
                 """Charge?"""
                 userinput = str.upper(str(input(self.que[4])))
                 if (userinput == "YES"):
@@ -106,25 +105,29 @@ class Main:
                 return
             """No problems"""
             print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
-                        "Operating System: {}\nWarranty: ")
+                        "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\n")
+            main.mainF()
+            return
         except:
             print("Something went wrong, restarting...\n\n")
-            main.MainF()
+            main.mainF()
 
     def solution(self, x):
         index = int(x)
-        if(self.os == "ios"):
+        if(str.upper(self.os) == "IOS"):
             index += 10
         sol = open("solutions.txt")
         solutions = sol.readlines()
         print (solutions[index])
         sol.close()
+        main.mainF()
 
     def start(self):
-        main.welcome()
+        """Intialization"""
         main.mainF()
 
     def quit(self):
+        """Quit"""
         print ("Troublegun Shutting Down...\n")
         time.sleep(3)
         sys.exit()
