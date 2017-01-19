@@ -105,7 +105,8 @@ class Main:
                 return
             """No problems"""
             print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
-                        "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\n")
+                        "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\n"
+                        .format(self.os, self.warranty, self.power, self.exterior))
             main.mainF()
             return
         except:
@@ -120,7 +121,15 @@ class Main:
         solutions = sol.readlines()
         print (solutions[index])
         sol.close()
-        main.mainF()
+        quitq = "If you would like to quit, please type 'q', or to restart type 'r'.
+        if (str.upper(input(quitQ)) == "q"):
+            main.quit()
+        elif (str.upper(input(quitQ)) == "r"):
+            print ("Troublegun restarting...\n\n")
+            main.mainF()
+        else:
+            print ("I'm sorry I didn't understand, restarting...\n\n")
+            main.mainF()
 
     def start(self):
         """Intialization"""
