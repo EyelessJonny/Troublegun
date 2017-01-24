@@ -17,12 +17,14 @@ class Main:
                               "Have you turned your mobile device off and on again? 'YES' or 'NO' \n",
                               "Has your device's battery been charged? 'YES' or 'NO'\n",
                               "Is your device's exterior damaged? 'YES' or'NO'\n",
-                              "Is your device infected with malware?\n",
-                              "\n")
+                              "Has your device been in contact with water? 'YES' or 'NO'\n",
+                              "Is your device infected with malware? 'YES' or 'NO'\n")
         self.os = str
         self.warranty = str
         self.power = str
+        self.charge = str
         self.exterior = str
+        self.malware = str
 
     def mainF(self):
         """Questioning fuction"""
@@ -57,7 +59,7 @@ class Main:
             userinput = str.upper(str(input(self.que[2])))
             if (userinput == "YES"):
                 print ("YES selected!\n")
-                self.power = "Powered"
+                self.power = "On"
                 """Turn it off and on?"""
                 userinput = str.upper(str(input(self.que[3])))
                 if (userinput == "YES"):
@@ -72,11 +74,12 @@ class Main:
                     return
             elif (userinput == "NO"):
                 print ("NO selected!\n")
-                self.power = "Un-powered"
+                self.power = "Off"
                 """Charge?"""
                 userinput = str.upper(str(input(self.que[4])))
                 if (userinput == "YES"):
                     print ("YES selected!\n")
+                    self.charge = "Charged"
                 elif (userinput == "NO"):
                     print ("NO selected!\n")
                     main.solution(2)
@@ -94,8 +97,14 @@ class Main:
             if (userinput == "YES"):
                 print ("YES selected!\n")
                 self.exterior = "Damaged"
-                main.solution(3)
-                return
+                """Wet"""
+                userinput = str.upper(str(input(self.que[6])))
+                if (userinput == "YES"):
+                    print ("YES selected!\n")
+                    main.solution(4) ################
+                elif (userinput == "NO"):
+                    print ("NO selected!\n")
+                    main.solution(3) ################
             elif (userinput == "NO"):
                 print ("NO selected!\n")
                 self.exterior = "Not damaged"
@@ -103,16 +112,27 @@ class Main:
                 print ("I'm sorry I didn't understand, restarting...\n\n")
                 main.mainF()
                 return
+            """Malware?"""
+            userinput = str.upper(str(input(self.que[7])))
+            if (userinput == "YES"):
+                print ("YES selected!\n")
+                main.solution(5) ################
+            elif (userinput == "NO"):
+                print ("NO selected!\n")
+                self.malware = "Not infected"
+            else:
+                print ("I'm sorry I didn't understand, restarting...\n\n")
+                main.mainF()
+                return
             """No problems"""
             print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
-                        "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\n"
-                        .format(self.os, self.warranty, self.power, self.exterior))
+                   "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\nMalware: {}\n"
+                   .format(self.os, self.warranty, self.power, self.exterior, self.malware))
             main.mainF()
             return
         except:
             print("Something went wrong, restarting...\n\n")
             main.mainF()
-
     def solution(self, x):
         index = int(x)
         if(str.upper(self.os) == "IOS"):
