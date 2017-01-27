@@ -6,7 +6,7 @@ Resources:
     -Font: Ubuntu
 
 Misc:
-     - Nothing misc.
+     - Classes broken.
 
 Task 1:
     - Welcome's end user to program.
