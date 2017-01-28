@@ -1,9 +1,9 @@
 #A Python program to help troubleshoot mobile device issues automatically.
 __author__ = "Jonny"
-__version__ = "0.10"
+__version__ = "0.11"
 
-from sys import exit
-from time import sleep
+import sys
+import time
 
 class Main:
     """Main class for project; handles everything."""
@@ -26,27 +26,28 @@ class Main:
         self.exterior = str
         self.malware = str
 
-    class Submain(self):
-        def __init__(self):
-            submain.qos()
-        """Questioning class"""
+    def mainF(self):
+        """Questioning functions"""
         try:
             def qos(self):
                 """What OS?"""
-                userinput = str.lower(str(input(self.que[0])))
+                userinput = str.upper(str(input(self.que[0])))
                 if (userinput == "ANDROID"):
                     print ("ANDROID selected!\n")
                     self.os = "Android"
+                    qwar(self)
                 elif (userinput == "IOS"):
                     print ("IOS selected!\n")
                     self.os = "iOS"
+                    qwar(self)
                 else:
-                    print ("I'm sorry I didn't understand, restarting...\n\n")
-                    submain.qos()
+                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    qos(self)
                     return
+
             def qwar(self):
                 """Warranty?"""
-                userinput = str.lower(str(input(self.que[1])))
+                userinput = str.upper(str(input(self.que[1])))
                 if (userinput == "YES"):
                     print ("YES selected!\n")
                     self.warranty = "In warranty"
@@ -55,129 +56,130 @@ class Main:
                 elif (userinput == "NO"):
                     print ("NO selected!\n")
                     self.warranty = "Out of warranty"
-                    submain.qpow()
+                    qpow(self)
                 else:
-                    print ("I'm sorry I didn't understand, restarting...\n\n")
-                    submain.qwar()
+                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    qwar(self)
                     return
-            def qpow():
+
+            def qpow(self):
                 """Powered on?"""
-                userinput = str.lower(str(input(self.que[2])))
+                userinput = str.upper(str(input(self.que[2])))
                 if (userinput == "YES"):
                     print ("YES selected!\n")
                     self.power = "On"
                     """Turn it off and on?"""
-                    userinput = str.lower(str(input(self.que[3])))
+                    userinput = str.upper(str(input(self.que[3])))
                     if (userinput == "YES"):
                         print ("YES selected!\n")
-                        submain.qext()
+                        qext(self)
                         return
                     elif (userinput == "NO"):
                         print ("NO selected!\n")
                         main.solution(1)
                         return
                     else:
-                        print ("I'm sorry I didn't understand, restarting...\n\n")
-                        submain.qpow()
+                        print ("I'm sorry I didn't understand, restarting question...\n\n")
+                        qpow(self)
                         return
                 elif (userinput == "NO"):
                     print ("NO selected!\n")
                     self.power = "Off"
                     """Charge?"""
-                    userinput = str.lower(str(input(self.que[4])))
+                    userinput = str.upper(str(input(self.que[4])))
                     if (userinput == "YES"):
                         print ("YES selected!\n")
                         self.charge = "Charged"
-                        submain.qext()
+                        qext(self)
                     elif (userinput == "NO"):
                         print ("NO selected!\n")
                         main.solution(2)
                         return
                     else:
-                        print ("I'm sorry I didn't understand, restarting...\n\n")
-                        submain.qpow()
+                        print ("I'm sorry I didn't understand, restarting question...\n\n")
+                        qpow(self)
                         return
                 else:
-                    print ("I'm sorry I didn't understand, restarting...\n\n")
-                    submain.qpow()
+                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    qpow(self)
                     return
-            def qext():
+
+            def qext(self):
                 """Exterior?"""
-                userinput = str.lower(str(input(self.que[5])))
+                userinput = str.upper(str(input(self.que[5])))
                 if (userinput == "YES"):
                     print ("YES selected!\n")
                     self.exterior = "Damaged"
                     """Wet"""
-                    userinput = str.lower(str(input(self.que[6])))
+                    userinput = str.upper(str(input(self.que[6])))
                     if (userinput == "YES"):
                         print ("YES selected!\n")
-                        main.solution(4) ################
+                        main.solution(4)
                     elif (userinput == "NO"):
                         print ("NO selected!\n")
-                        main.solution(3) ################
+                        main.solution(3)
                 elif (userinput == "NO"):
                     print ("NO selected!\n")
                     self.exterior = "Not damaged"
-                    submain.qwre()
+                    qwre(self)
                 else:
-                    print ("I'm sorry I didn't understand, restarting...\n\n")
-                    submain.qext()
+                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    qext(self)
                     return
-            def qwre():
+
+            def qwre(self):
                 """Malware?"""
-                userinput = str.lower(str(input(self.que[7])))
+                userinput = str.upper(str(input(self.que[7])))
                 if (userinput == "YES"):
                     print ("YES selected!\n")
-                    main.solution(5) ################
+                    main.solution(5)
                 elif (userinput == "NO"):
                     print ("NO selected!\n")
                     self.malware = "Not infected"
-                    submain.neg()
+                    neg(self)
                 else:
-                    print ("I'm sorry I didn't understand, restarting...\n\n")
-                    submain.qwre()
+                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    qwre(self)
                     return
-            def neg():
+
+            def neg(self):
                 """No problems"""
                 print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
-                            "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\nMalware: {}\n"
-                            .format(self.os, self.warranty, self.power, self.exterior, self.malware))
-                return
+                       "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\nMalware: {}\n"
+                       .format(self.os, self.warranty, self.power, self.exterior, self.malware))
+                main.quit()
         except:
             print("Something went wrong, restarting...\n\n")
-            submain()
+            main()
+        qos(self)
 
     def solution(self, x):
         index = int(x)
-        if(str.lower(self.os) == "IOS"):
+        if(str.upper(self.os) == "IOS"):
             index += 10
         sol = open("solutions.txt")
         solutions = sol.readlines()
         print (solutions[index])
         sol.close()
-        quitq = "If you would like to quit, please type 'q', or to restart type 'r'."
-        if (str.lower(input(quitQ)) == "q"):
-            main.quit()
-        elif (str.lower(input(quitQ)) == "r"):
-            print ("Troublegun restarting...\n\n")
-            submain()
-        else:
-            print ("I'm sorry I didn't understand, restarting...\n\n")
-            submain()
-
-    def start(self):
-        """Intialization"""
-        submain = Submain()
-        subsubmain()
+        main.quit()
 
     def quit(self):
         """Quit"""
-        print ("Troublegun Shutting Down...\n")
-        time.sleep(3)
-        sys.exit()
+        userinput = str.upper(input("If you would like to quit, please type "
+                                                                "'q', or to restart type 'r'.\n"))
+        if (userinput == "Q"):
+            print ("Troublegun Shutting Down...\n")
+            time.sleep(2)
+            sys.exit()
+        elif (userinput == "R"):
+            print ("Troublegun restarting...\n\n")
+            main.mainF()
+        else:
+            print ("I'm sorry I didn't understand...\n\n")
+            main.quit()
 
 if __name__ == "__main__":
     main = Main()
-    main.start()
+    main.mainF()
 else:
     print ("Please run Main.py")
