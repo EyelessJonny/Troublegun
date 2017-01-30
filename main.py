@@ -1,6 +1,6 @@
 #A Python program to help troubleshoot mobile device issues automatically.
 __author__ = "Jonny"
-__version__ = "0.11"
+__version__ = "0.12"
 
 import sys
 import time
@@ -10,6 +10,7 @@ class Main:
     def __init__(self):
         print("Welcome to Troublegun v{} made by {}.\n\n\nThe following questions"
                    " will help shoot your troubles:\n " .format(__version__, __author__))
+        self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("What operating system does your mobile device use: 'ANDROID', "
                               "OR 'IOS'.\n",
                               "Is your device under warranty? 'YES' or 'NO'\n",
@@ -18,11 +19,11 @@ class Main:
                               "Has your device's battery been charged? 'YES' or 'NO'\n",
                               "Is your device's exterior damaged? 'YES' or'NO'\n",
                               "Is your device wet? 'YES' or 'NO'\n",
-                              "Is your device infected with malware? 'YES' or 'NO'\n")
+                              "Is your device infected with malware? 'YES' or 'NO'\n",
+                              "Is your device boot-looping? 'YES' or 'NO'\n")
         self.os = str
         self.warranty = str
         self.power = str
-        self.charge = str
         self.exterior = str
         self.malware = str
 
@@ -41,7 +42,7 @@ class Main:
                     self.os = "iOS"
                     qwar(self)
                 else:
-                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    print (self.error)
                     qos(self)
                     return
 
@@ -58,7 +59,7 @@ class Main:
                     self.warranty = "Out of warranty"
                     qpow(self)
                 else:
-                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    print (self.error)
                     qwar(self)
                     return
 
@@ -79,7 +80,7 @@ class Main:
                         main.solution(1)
                         return
                     else:
-                        print ("I'm sorry I didn't understand, restarting question...\n\n")
+                        print (self.error)
                         qpow(self)
                         return
                 elif (userinput == "NO"):
@@ -89,18 +90,30 @@ class Main:
                     userinput = str.upper(str(input(self.que[4])))
                     if (userinput == "YES"):
                         print ("YES selected!\n")
-                        self.charge = "Charged"
-                        qext(self)
+                        """Boot-loop?"""
+                        userinput = str.upper(str(input(self.que[8])))
+                        if (userinput == "YES"):
+                            print ("YES selected!\n")
+                            main.solution(10)
+                            return
+                        elif (userinput == "NO"):
+                            print ("NO selected!\n")
+                            main.solution(9)
+                            return
+                        else:
+                            print (self.error)
+                            qpow(self)
+                            return
                     elif (userinput == "NO"):
                         print ("NO selected!\n")
                         main.solution(2)
                         return
                     else:
-                        print ("I'm sorry I didn't understand, restarting question...\n\n")
+                        print (self.error)
                         qpow(self)
                         return
                 else:
-                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    print (self.error)
                     qpow(self)
                     return
 
@@ -118,12 +131,16 @@ class Main:
                     elif (userinput == "NO"):
                         print ("NO selected!\n")
                         main.solution(3)
+                    else:
+                        print (self.error)
+                        qext(self)
+                        return
                 elif (userinput == "NO"):
                     print ("NO selected!\n")
                     self.exterior = "Not damaged"
                     qwre(self)
                 else:
-                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    print (self.error)
                     qext(self)
                     return
 
@@ -138,7 +155,7 @@ class Main:
                     self.malware = "Not infected"
                     neg(self)
                 else:
-                    print ("I'm sorry I didn't understand, restarting question...\n\n")
+                    print (self.error)
                     qwre(self)
                     return
 
@@ -175,7 +192,7 @@ class Main:
             print ("Troublegun restarting...\n\n")
             main.mainF()
         else:
-            print ("I'm sorry I didn't understand...\n\n")
+            print (self.error)
             main.quit()
 
 if __name__ == "__main__":
