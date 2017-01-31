@@ -33,131 +33,116 @@ class Main:
             def qos(self):
                 """What OS?"""
                 userinput = str.upper(str(input(self.que[0])))
-                if (userinput == "ANDROID" or "A"):
+                if (userinput == "ANDROID") or (userinput == "A"):
                     print ("ANDROID selected!\n")
                     self.os = "Android"
                     qwar(self)
-                elif (userinput == "IOS" or "I"):
+                elif (userinput == "IOS") or (userinput == "I"):
                     print ("IOS selected!\n")
                     self.os = "iOS"
                     qwar(self)
                 else:
                     print (self.error)
                     qos(self)
-                    return
 
             def qwar(self):
                 """Warranty?"""
                 userinput = str.upper(str(input(self.que[1])))
-                if (userinput == "YES" or "Y"):
+                if (userinput == "YES") or (userinput == "Y"): ############
                     print ("YES selected!\n")
                     self.warranty = "In warranty"
                     main.solution(0)
-                    return
-                elif (userinput == "NO" or "N"):
+                elif (userinput == "NO") or (userinput == "N"):
                     print ("NO selected!\n")
                     self.warranty = "Out of warranty"
                     qpow(self)
                 else:
                     print (self.error)
                     qwar(self)
-                    return
 
             def qpow(self):
                 """Powered on?"""
                 userinput = str.upper(str(input(self.que[2])))
-                if (userinput == "YES" or "Y"):
+                if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.power = "On"
                     """Turn it off and on?"""
                     userinput = str.upper(str(input(self.que[3])))
-                    if (userinput == "YES" or "Y"):
+                    if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         qext(self)
-                        return
-                    elif (userinput == "NO" or "N"):
+                    elif (userinput == "NO") or (userinput == "N"):
                         print ("NO selected!\n")
                         main.solution(1)
-                        return
                     else:
                         print (self.error)
                         qpow(self)
-                        return
-                elif (userinput == "NO" or "N"):
+                elif (userinput == "NO") or (userinput == "N"):
                     print ("NO selected!\n")
                     self.power = "Off"
                     """Charge?"""
                     userinput = str.upper(str(input(self.que[4])))
-                    if (userinput == "YES" or "Y"):
+                    if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         """Boot-loop?"""
                         userinput = str.upper(str(input(self.que[8])))
-                        if (userinput == "YES" or "Y"):
+                        if (userinput == "YES") or (userinput == "Y"):
                             print ("YES selected!\n")
                             main.solution(10)
-                            return
-                        elif (userinput == "NO" or "N"):
+                        elif (userinput == "NO") or (userinput == "N"):
                             print ("NO selected!\n")
                             main.solution(9)
-                            return
                         else:
                             print (self.error)
                             qpow(self)
-                            return
-                    elif (userinput == "NO"):
+                    elif (userinput == "NO") or (userinput == "N"):
                         print ("NO selected!\n")
                         main.solution(2)
-                        return
                     else:
                         print (self.error)
                         qpow(self)
-                        return
                 else:
                     print (self.error)
                     qpow(self)
-                    return
 
             def qext(self):
                 """Exterior?"""
                 userinput = str.upper(str(input(self.que[5])))
-                if (userinput == "YES" or "Y"):
+                if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.exterior = "Damaged"
                     """Wet"""
                     userinput = str.upper(str(input(self.que[6])))
-                    if (userinput == "YES" or "Y"):
+                    if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         main.solution(4)
-                    elif (userinput == "NO" or "N"):
+                    elif (userinput == "NO") or (userinput == "N"):
                         print ("NO selected!\n")
                         main.solution(3)
                     else:
                         print (self.error)
                         qext(self)
-                        return
-                elif (userinput == "NO" or "N"):
+                elif (userinput == "NO") or (userinput == "N"):
                     print ("NO selected!\n")
                     self.exterior = "Not damaged"
                     qwre(self)
                 else:
                     print (self.error)
                     qext(self)
-                    return
 
             def qwre(self):
                 """Malware?"""
                 userinput = str.upper(str(input(self.que[7])))
-                if (userinput == "YES" or "Y"):
+                if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     main.solution(5)
-                elif (userinput == "NO" or "N"):
+                elif (userinput == "NO") or (userinput == "N"):
                     print ("NO selected!\n")
                     self.malware = "Not infected"
                     neg(self)
                 else:
                     print (self.error)
                     qwre(self)
-                    return
 
             def neg(self):
                 """No problems"""
