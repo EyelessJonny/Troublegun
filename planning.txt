@@ -1,59 +1,51 @@
 #A Python program to help troubleshoot mobile device issues automatically.
+
+import externalLibs
+
 class Main:
     function __constructor__()
         print(WelcomeMessage)
         define classArray
         define classVars
 
-    function mainF(classArray, globalVars):
-          nestFunction qos(classArray, globalVars):
+    function mainF(classArray, classVars):
+          nestFunction question(classArray, globalVars):
               userinput = upper(input(prompt))
-              if (userinput == "ANDROID" or "A"):
-                  print ("ANDROID selected!")
-                  OS = "Android"
-                  call nextFunction()
-              elif (userinput == "IOS" or "I"):
-                  print ("IOS selected!")
-                  OS = "iOS"
-                  call nextFunction(classArray, globalVars)
+              if (userinput == answerA):
+                  print (confirmationA)
+                  classVar = answerA
+                  call nextFunction(classArray, globalVars) or call solution(index)
+              elif (userinput == answerB):
+                  print (confirmationB)
+                  classVar = answerB
+                  call nextFunction(classArray, globalVars) or call solution(index)
               else:
                   print (error)
-                  call nextFunction(classArray, globalVars)
+                  call question(classArray, globalVars)
 
-          def neg(self):
-              """No problems"""
+          nestFunction negative():
               print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
-                     "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\nMalware: {}\n"
-                     .format(self.os, self.warranty, self.power, self.exterior, self.malware))
-              main.quit()
+                     "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\nMalware: {}\n")
+              call quit()
 
-    def solution(self, x):
-        index = int(x)
-        if(str.upper(self.os) == "IOS"):
-            index += 10
-        sol = open("solutions.txt")
-        solutions = sol.readlines()
+    function solution(index, classVars):
+        if(classVarOS == "IOS"):
+            index + 10
+        solutions = readlines("solution.txt")
         print (solutions[index])
-        sol.close()
-        main.quit()
+        call quit()
 
-    def quit(self):
-        """Quit"""
-        userinput = str.upper(input("If you would like to quit, please type "
-                                                                "'q', or to restart type 'r'.\n"))
+    function quit():
+        userinput = upper(input(prompt)
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
-            time.sleep(2)
-            sys.exit()
+            sleep(2)
+            exit()
         elif (userinput == "R"):
             print ("Troublegun restarting...\n\n")
-            main.mainF()
+            call mainF()
         else:
             print (self.error)
-            main.quit()
+            call quit()
 
-if __name__ == "__main__":
-    main = Main()
-    main.mainF()
-else:
-    print ("Please run Main.py")
+call Main.mainF

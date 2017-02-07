@@ -48,7 +48,7 @@ class Main:
             def qwar(self):
                 """Warranty?"""
                 userinput = str.upper(str(input(self.que[1])))
-                if (userinput == "YES") or (userinput == "Y"): ############
+                if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.warranty = "In warranty"
                     main.solution(0)
@@ -88,10 +88,10 @@ class Main:
                         userinput = str.upper(str(input(self.que[8])))
                         if (userinput == "YES") or (userinput == "Y"):
                             print ("YES selected!\n")
-                            main.solution(10)
+                            main.solution(8)
                         elif (userinput == "NO") or (userinput == "N"):
                             print ("NO selected!\n")
-                            main.solution(9)
+                            main.solution(7)
                         else:
                             print (self.error)
                             qpow(self)
