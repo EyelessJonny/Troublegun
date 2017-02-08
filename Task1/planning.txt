@@ -48,4 +48,4 @@ class Main:
             print (self.error)
             call quit()
 
-call Main.mainF
+call Main.mainF()

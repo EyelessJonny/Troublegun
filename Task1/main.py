@@ -1,6 +1,6 @@
 #A Python program to help troubleshoot mobile device issues automatically.
 __author__ = "Jonny"
-__version__ = "0.12"
+__version__ = "1.0"
 
 import sys
 import time
