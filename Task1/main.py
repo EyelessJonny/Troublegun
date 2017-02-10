@@ -8,8 +8,9 @@ import time
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("Welcome to Troublegun Flowchart v{} made by {}.\n\n\nThe following questions"
-                   " will help shoot your troubles:\n " .format(__version__, __author__))
+        print("Welcome to Troublegun Flowchart v{} made by {}.\n\n\n"
+                   "The following questions  will help shoot your troubles:\n "
+                    .format(__version__, __author__))
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("What operating system does your mobile device use: 'ANDROID', "
                               "OR 'IOS'.\n",
@@ -156,6 +157,7 @@ class Main:
         qos(self)
 
     def solution(self, x):
+        """Solutions, parsing exit code"""
         index = int(x)
         if(str.upper(self.os) == "IOS"):
             index += 10
@@ -168,7 +170,7 @@ class Main:
     def quit(self):
         """Quit"""
         userinput = str.upper(input("If you would like to quit, please type "
-                                                                "'q', or to restart type 'r'.\n"))
+                                                                "'Q', or to restart type 'R'.\n"))
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
             time.sleep(2)
