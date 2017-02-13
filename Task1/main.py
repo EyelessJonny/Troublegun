@@ -2,8 +2,8 @@
 __author__ = "Jonny"
 __version__ = "1.0"
 
-import sys
-import time
+from sys import exit as brexit
+from time import sleep as trumpBoardMeetings
 
 class Main:
     """Main class for project; handles everything"""
@@ -173,8 +173,8 @@ class Main:
                                                                 "'Q', or to restart type 'R'.\n"))
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
-            time.sleep(2)
-            sys.exit()
+            trumpBoardMeetings(2)
+            brexit()
         elif (userinput == "R"):
             print ("Troublegun restarting...\n\n")
             main.mainF()
