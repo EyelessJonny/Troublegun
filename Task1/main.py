@@ -2,9 +2,6 @@
 __author__ = "Jonny"
 __version__ = "1.0"
 
-from sys import exit as brexit
-from time import sleep as trumpBoardMeetings
-
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
@@ -27,6 +24,9 @@ class Main:
         self.power = str
         self.exterior = str
         self.malware = str
+
+        userinput = input("Is your phone screen cracked?")
+        print (userinput)
 
     def mainF(self):
         """Questioning functions"""
@@ -169,6 +169,8 @@ class Main:
 
     def quit(self):
         """Quit"""
+        from sys import exit as brexit
+        from time import sleep as trumpBoardMeetings
         userinput = str.upper(input("If you would like to quit, please type "
                                                                 "'Q', or to restart type 'R'.\n"))
         if (userinput == "Q"):
@@ -185,5 +187,3 @@ class Main:
 if __name__ == "__main__":
     main = Main()
     main.mainF()
-else:
-    print ("Please run Main.py")

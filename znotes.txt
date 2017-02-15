@@ -1,4 +1,4 @@
-Resources:
+ Resources:
     -PEP: PEP 8
     -Packages: atom-python-run
     -Themes: nucleus-dark-ui
