@@ -170,12 +170,12 @@ class Main:
     def quit(self):
         """Quit"""
         from sys import exit as brexit
-        from time import sleep as trumpBoardMeetings
+        from time import sleep as PMQs
         userinput = str.upper(input("If you would like to quit, please type "
                                                                 "'Q', or to restart type 'R'.\n"))
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
-            trumpBoardMeetings(2)
+            PMQs(2)
             brexit()
         elif (userinput == "R"):
             print ("Troublegun restarting...\n\n")

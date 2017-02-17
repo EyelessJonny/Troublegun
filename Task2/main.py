@@ -13,19 +13,21 @@ class Main:
 
     def mainF(self):
         """Questioning functions"""
-        keywords = ("Broken", "Crack", "Smash", "", "", "", "", "", "", "", "")
+        keywords = ("Broken", "Crack", "Smash", "Slow", "Crash", "", "", "", "", "", "")
         kindex = 0
         userinput = str.upper(str(input("Please enter your issue:\n")))
         while (str.upper(keywords[kindex]) not in userinput):
             kindex += 1
-        if (kindex < 4):
-            """Damaged screen"""
+        if (kindex < 2):
+            """Damaged"""
             Main.solution(0)
-        elif(kindex < 9)
-            """ """
+        elif(kindex < 9):
+            """Off and on"""
         else:
+            print (self.error)
+            main.MainF()
 
-    def solution(self, x):
+    def solution(x):
         """Solutions, parsing exit code"""
         index = int(x)
         sol = open("solutions.txt")
@@ -34,18 +36,18 @@ class Main:
         sol.close()
         main.quit()
 
-    def Quit(self):
+    def quit(self):
         """Quit"""
-        from sys import exit as exit
-        from time import time as time
+        from sys import exit as ex
+        from time import sleep as sl
         userinput = str.upper(str(input("If you would like to quit, please type "
-                                                                "'Q', or to restart type 'R'.\n")))
+                                                                     "'Q', or to restart type 'R'.\n")))
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
-        "sleep(2)
-            exit()
+            sl(2)
+            ex()
         elif (userinput == "R"):
-            print ("Troublegun restarting...\n\n")
+            print ("Troublegun Restarting...\n\n")
             main.mainF()
         else:
             print (self.error)
