@@ -1,6 +1,4 @@
  Resources:
-    -PEP: PEP 8
-    -Packages: atom-python-run
     -Themes: nucleus-dark-ui
                       spacegray-atom-dark-syntax
     -Font: Ubuntu
@@ -34,3 +32,23 @@ Task 3:
             - If successful load file of suitable questions and responses for that device.
             - If unsuccessful allow them to retry, if unsuccessful a second time send to tech.
     Footnote: Ignore Windows devices for this.
+
+
+    Pastebin:
+
+    if(userinput == "APPLE") or (userinput == "IPHONE"):
+            """Apple"""
+            try:
+                import apple as _apple
+                _apple.apple(self)
+            except
+        elif(userinput == "SAMSUNG"):
+            """Samsung"""
+            import samsung as _samsung
+            _samsung.samsung(self)
+        elif(userinput == "ONEPLUS")
+            """OnePlus"""
+            pass
+        else:
+            print (self.error)
+            main.MainF()

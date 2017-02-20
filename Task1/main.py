@@ -152,8 +152,8 @@ class Main:
                        .format(self.os, self.warranty, self.power, self.exterior, self.malware))
                 main.quit()
         except:
-            print("Something went wrong, restarting...\n\n")
-            main()
+            print("Something went wrong\n\n")
+            main.quit()
         qos(self)
 
     def solution(self, x):
