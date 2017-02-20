@@ -8,6 +8,7 @@ class Main:
         define classArray
         define classVars
 
+<<<<<<< HEAD
     function mainF(classArray, classVars):
           nestFunction question(classArray, globalVars):
               userinput = upper(input(prompt))
@@ -35,6 +36,8 @@ class Main:
         print (solutions[index])
         call quit()
 
+=======
+>>>>>>> master
     function quit():
         userinput = upper(input(prompt)
         if (userinput == "Q"):

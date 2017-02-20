@@ -1,0 +1,24 @@
+#A Python program to help troubleshoot mobile device issues automatically.
+
+import externalLibs
+
+class Main:
+    function __constructor__()
+        print(WelcomeMessage)
+        define classArray
+        define classVars
+
+    function quit():
+        userinput = upper(input(prompt)
+        if (userinput == "Q"):
+            print ("Troublegun Shutting Down...\n")
+            sleep(2)
+            exit()
+        elif (userinput == "R"):
+            print ("Troublegun restarting...\n\n")
+            call mainF()
+        else:
+            print (self.error)
+            call quit()
+
+call Main.mainF()
