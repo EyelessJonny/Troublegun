@@ -1,15 +1,24 @@
 #Apple Module
 
-def apple(self):
-    userinput = str.upper(str(input"What model of Apple device do you have?"))
-    if("IPHONE" in userinput)
-        iphone(userinput)
-    elif("IPOD" in userinput) or ("IPAD" in userinput)
-        print ("Your device is currently not supported...")
-        pass
-    else:
-        print (self.error)
-        apple(self)
+class Apple:
+    def __init__(self):
+        print ("\nTroublegun Apple Initialized...\n")
+        self.error = "I'm sorry I didn't understand...\n\n"
+        
+    def intro(self):
+        userinput = str.upper(str(input("What model of Apple device do you have?\n")))
+        if("IPHONE" in userinput):
+            iphone(userinput)
+        elif("IPOD" in userinput) or ("IPAD" in userinput):
+            print ("Your device is currently not supported...\n")
+            return
+        else:
+            print (self.error)
+            apple(self)
 
-def iphone(x):
-    print("iPhone Selected")
+    def iphone(x):
+        print("iPhone Selected")
+
+if __name__ != "__main__":
+    main = Apple()
+    main.intro()

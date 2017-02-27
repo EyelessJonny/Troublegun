@@ -13,12 +13,13 @@ class Main:
 
     def mainF(self):
         """Questioning functions"""
-        userinput = str.lower(str(input("Please enter your decive's brand:\n")))
+        userinput = str.lower(str(input("Please enter your decive's brand: e.g. 'Apple'\n")))
         try:
-            import (userinput) as _(userinput)
-            _(userinput).(userinput)(self)
+            solution = __import__(userinput)
+            solution()
+            main.quit()
         except:
-            print("Your device's manufacturer is not currently supported...")
+            print("Your device's manufacturer is not currently supported...\n")
             main.quit()
 
     def quit(self):
