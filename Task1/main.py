@@ -1,4 +1,5 @@
 #A Python program to help troubleshoot mobile device issues automatically.
+
 __author__ = "Jonny"
 __version__ = "1.0"
 
@@ -24,9 +25,6 @@ class Main:
         self.power = str
         self.exterior = str
         self.malware = str
-
-        userinput = input("Is your phone screen cracked?")
-        print (userinput)
 
     def mainF(self):
         """Questioning functions"""

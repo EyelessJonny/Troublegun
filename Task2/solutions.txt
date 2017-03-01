@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-Take your device to your device's retailer. Don't void your warranty!
-Turn it off and on again.
-Charge your device.
-Take your device to a repairs shop.
-=======
 Take your device to a repairs shop.
 Turn it off and on again.
 Charge your device.
->>>>>>> master
 Leave your device in a container of uncooked rice for 24 hours.
 Install an anti virus for your device to help remove malware.
 Install a data recovery app, and attempt to recover lost files.

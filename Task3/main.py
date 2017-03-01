@@ -1,5 +1,6 @@
 # A Python program to help troubleshoot mobile device issues
 # automatically with device specifics.
+
 __author__ = "Jonny"
 __version__ = "0.1"
 
@@ -16,7 +17,6 @@ class Main:
         userinput = str.lower(str(input("Please enter your decive's brand: e.g. 'Apple'\n")))
         try:
             solution = __import__(userinput)
-            solution()
             main.quit()
         except:
             print("Your device's manufacturer is not currently supported...\n")
