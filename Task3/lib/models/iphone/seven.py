@@ -1,4 +1,4 @@
-# A Python program to help troubleshoot mobile device issues automatically.
+# iPhone 7 module
 
 __author__ = "Jonny"
 __version__ = "1.0"
@@ -6,20 +6,17 @@ __version__ = "1.0"
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("Welcome to Troublegun Flowchart v{} made by {}.\n\n\n"
-                   "The following questions  will help shoot your troubles:\n "
-                    .format(__version__, __author__))
+        print("iPhone 7 Selected\n\n")
         self.error = "I'm sorry I didn't understand...\n\n"
-        self.que = ("What operating system does your mobile device use: 'ANDROID', "
-                              "OR 'IOS'.\n",
-                              "Is your device under warranty? 'YES' or 'NO'\n",
-                              "Can your mobile device be powered on? 'YES' or 'NO'.\n",
-                              "Have you turned your mobile device off and on again? 'YES' or 'NO' \n",
-                              "Has your device's battery been charged? 'YES' or 'NO'\n",
-                              "Is your device's exterior damaged? 'YES' or'NO'\n",
-                              "Is your device wet? 'YES' or 'NO'\n",
-                              "Is your device infected with malware? 'YES' or 'NO'\n",
-                              "Is your device boot-looping? 'YES' or 'NO'\n")
+        self.que = ("",
+                              "Is your iPhone 7 under warranty? 'YES' or 'NO'\n",
+                              "Can your  iPhone 7 be powered on? 'YES' or 'NO'.\n",
+                              "Have you turned your  iPhone 7 off and on again? 'YES' or 'NO' \n",
+                              "Has your iPhone 7's battery been charged? 'YES' or 'NO'\n",
+                              "Is your iPhone 7's exterior damaged? 'YES' or'NO'\n",
+                              "Is your iPhone 7 wet? 'YES' or 'NO'\n",
+                              "Is your iPhone 7 infected with malware? 'YES' or 'NO'\n",
+                              "Is your iPhone 7 boot-looping? 'YES' or 'NO'\n")
         self.os = str
         self.warranty = str
         self.power = str
@@ -31,18 +28,9 @@ class Main:
         try:
             def qos(self):
                 """What OS?"""
-                userinput = str.upper(str(input(self.que[0])))
-                if (userinput == "ANDROID") or (userinput == "A"):
-                    print ("ANDROID selected!\n")
-                    self.os = "Android"
-                    qwar(self)
-                elif (userinput == "IOS") or (userinput == "I"):
-                    print ("IOS selected!\n")
-                    self.os = "iOS"
-                    qwar(self)
-                else:
-                    print (self.error)
-                    qos(self)
+                self.os = "iOS"
+                qwar(self)
+
 
             def qwar(self):
                 """Warranty?"""
@@ -157,31 +145,12 @@ class Main:
     def solution(self, x):
         """Solutions, parsing exit code"""
         index = int(x)
-        if(str.upper(self.os) == "IOS"):
-            index += 10
-        sol = open("solutions.txt")
+        sol = open("lib/apple.txt")
         solutions = sol.readlines()
         print (solutions[index])
         sol.close()
         main.quit()
 
-    def quit(self):
-        """Quit"""
-        from sys import exit as brexit
-        from time import sleep as PMQs
-        userinput = str.upper(input("If you would like to quit, please type "
-                                                                "'Q', or to restart type 'R'.\n"))
-        if (userinput == "Q"):
-            print ("Troublegun Shutting Down...\n")
-            PMQs(2)
-            brexit()
-        elif (userinput == "R"):
-            print ("Troublegun restarting...\n\n")
-            main.mainF()
-        else:
-            print (self.error)
-            main.quit()
-
-if (__name__ == "__main__"):
+if (__name__ != "__main__"):
     main = Main()
     main.mainF()

@@ -2,7 +2,7 @@
 # automatically with device specifics.
 
 __author__ = "Jonny"
-__version__ = "0.1"
+__version__ = "0.2"
 
 class Main:
     """Main class for project; handles everything"""
@@ -17,9 +17,7 @@ class Main:
         userinput = str.lower(str(input("Please enter your decive's brand: "
                                         "e.g. 'Apple'\n")))
         try:
-#            solution = __import__(userinput)
             exec("import lib.{}" .format(userinput))
-            exec("lib.{}" .format(userinput))
             main.quit()
         except:
             print("Your device's manufacturer is not currently supported...\n")
@@ -42,6 +40,6 @@ class Main:
             print (self.error)
             main.quit()
 
-if __name__ == "__main__":
+if (__name__ == "__main__"):
     main = Main()
     main.mainF()

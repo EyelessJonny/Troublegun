@@ -1,12 +1,14 @@
 #Apple Module
 
 class Apple:
+    """Main class for module"""
     def __init__(self):
         print ("\nTroublegun Apple Initialized...\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.nosupp = "Your device is currently not supported...\n"
 
     def intro(self):
+        """Selection"""
         userinput = str.upper(str(input("What model of Apple device do you have? "
                                                                      "e.g. iPhone 7 Plus\n")))
         if("IPHONE" in userinput):
@@ -19,21 +21,23 @@ class Apple:
             main.intro()
 
     def iphone(Self, x):
+        """Detailed selection"""
         if("7" in x) and ("PLUS" in x):
-            version = "7 Plus"
+            version = "sevenplus"
         elif("7" in x) and ("PLUS" not in x):
-            version = "7"
+            version = "seven"
         elif("6" in x) and ("S" in x) and ("PLUS" in x):
-            version = "6S Plus"
+            version = "sixsplus"
         elif("6" in x) and ("S" in x) and ("PLUS" not in x):
-            version = "6S"
+            version = "sixs"
         elif("SE" in x):
-            version = "SE"
+            version = "se"
         else:
             print(self.nosupp)
-        print("iPhone {} Selected" .format(version))
+            return
+        exec("import lib.models.iphone.{}" .format(version))
 
-if __name__ != "__main__":
+if (__name__ != "__main__"):
     main = Apple()
     main.intro()
 else:

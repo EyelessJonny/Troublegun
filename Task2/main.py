@@ -59,7 +59,7 @@ class Main:
             print (self.error)
             main.quit()
 
-if __name__ == "__main__":
+if (__name__ == "__main__"):
     main = Main()
     main.mainF()
 else:
