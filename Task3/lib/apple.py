@@ -10,7 +10,7 @@ class Apple:
     def intro(self):
         """Selection"""
         userinput = str.upper(str(input("What model of Apple device do you have? "
-                                                                     "e.g. iPhone 7 Plus\n")))
+                                                                     "e.g. 'iPhone 7 Plus'\n")))
         if("IPHONE" in userinput):
             main.iphone(userinput)
         elif("IPOD" in userinput) or ("IPAD" in userinput):

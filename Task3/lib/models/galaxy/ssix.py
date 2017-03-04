@@ -10,8 +10,8 @@ class Main:
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("",
                               "Is your Galaxy S6 under warranty? 'YES' or 'NO'\n",
-                              "Can your  Galaxy S6 be powered on? 'YES' or 'NO'.\n",
-                              "Have you turned your  Galaxy S6 off and on again? 'YES' or 'NO' \n",
+                              "Can your Galaxy S6 be powered on? 'YES' or 'NO'.\n",
+                              "Have you turned your Galaxy S6 off and on again? 'YES' or 'NO' \n",
                               "Has your Galaxy S6's battery been charged? 'YES' or 'NO'\n",
                               "Is your Galaxy S6's exterior damaged? 'YES' or'NO'\n",
                               "Is your Galaxy S6 wet? 'YES' or 'NO'\n",

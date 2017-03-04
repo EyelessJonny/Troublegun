@@ -10,8 +10,8 @@ class Main:
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("",
                               "Is your iPhone SE under warranty? 'YES' or 'NO'\n",
-                              "Can your  iPhone SE be powered on? 'YES' or 'NO'.\n",
-                              "Have you turned your  iPhone SE off and on again? 'YES' or 'NO' \n",
+                              "Can your iPhone SE be powered on? 'YES' or 'NO'.\n",
+                              "Have you turned your iPhone SE off and on again? 'YES' or 'NO' \n",
                               "Has your iPhone SE's battery been charged? 'YES' or 'NO'\n",
                               "Is your iPhone SE's exterior damaged? 'YES' or'NO'\n",
                               "Is your iPhone SE wet? 'YES' or 'NO'\n",
