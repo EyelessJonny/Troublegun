@@ -1,9 +1,0 @@
-Take your device to Samsung. Don't void your warranty!
-Turn it off and on again.
-Charge your device.
-Take your device to a repairs shop.
-Leave your device in a container of uncooked rice for 24 hours.
-Install an anti virus for your device to help remove malware.
-Install a data recovery app, and attempt to recover lost files.
-Flash android through ADB.
-Factory reset your device through it's bootloader.
