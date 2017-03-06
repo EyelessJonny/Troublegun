@@ -8,8 +8,8 @@ class Apple:
 
     def intro(self):
         """Selection function"""
-        userinput = str.upper(str(input("What model of Apple device do you have? "
-                                                                     "e.g. 'iPhone 7 Plus'\n")))
+        userinput = (input("What model of Apple device do you have? e.g. 'iPhone 7 Plus\n")
+                                ).upper()
         """X for line length"""
         x = userinput
         if("IPHONE" in x) and ("7" in x) and ("PLUS" in x):
