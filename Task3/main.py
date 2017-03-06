@@ -23,7 +23,7 @@ class Main:
             print(e)
             if (module != None):
                 main.failure(module)
-            else
+            else:
                 main.failure(userinput)
             main.quit()
 
@@ -38,8 +38,8 @@ class Main:
 
     def quit(self):
         """Quit"""
-        userinput = (input("If you would like to quit, please type "
-                                        "'Q', or to restart type 'R'.\n>")).lower()
+        userinput = (input("If you would like to quit, please type 'Q', or to restart type 'R'.\n>")
+                                ).lower()
         if (userinput == "q"):
             print ("Troublegun Shutting Down...\n")
             time.sleep(1)
