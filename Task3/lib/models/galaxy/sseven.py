@@ -145,7 +145,7 @@ class Main:
     def solution(self, x):
         """Solutions, parsing exit code"""
         index = int(x)
-        sol = open("lib/android.txt")
+        sol = open("lib/samsol.dat")
         solutions = sol.readlines()
         print (solutions[index])
         sol.close()

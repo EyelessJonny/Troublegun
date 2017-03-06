@@ -14,14 +14,25 @@ class Main:
 
     def mainF(self):
         """Questioning functions"""
-        userinput = str.lower(str(input("Please enter your decive's brand: "
-                                        "e.g. 'Apple'\n")))
+        userinput = str.lower(str(input("Please enter your device's brand: e.g. 'Apple'\n")))
         try:
             exec("import lib.{}" .format(userinput))
-            main.quit()
+            eval("module = lib.{}.{}.intro()" .format(userinput, userinput))
+            if(module != None):
+                main.failure(module)
+            else:
+                main.quit()
         except:
-            print("Your device's manufacturer is not currently supported...\n")
+            main.failure()
             main.quit()
+
+    def failure(self, x):
+        from datetime import datetime as d
+        exitcode = d.date.today() * 1000
+        device = x
+        print("Your device's manufacturer is not currently supported...\n")
+        userinput = str.lower(str(input("Briefly describe your issue for our technicians:\n")))
+        exec("error = open('unsolved/{} - {}.dat', 'a+')" .format(caseno, device))
 
     def quit(self):
         """Quit"""
