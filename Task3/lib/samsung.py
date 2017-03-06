@@ -9,8 +9,8 @@ class Samsung:
 
     def intro(self):
         """Selection"""
-        userinput = str.upper(str(input("What model of Samsung device do you have? "
-                                                                     "e.g 'Galaxy S6 Edge+''\n")))
+        userinput = str.upper(str(input("What model of Samsung device do you
+                                        "have? e.g 'Galaxy S6 Edge+''\n> ")))
         if("GALAXY" in userinput) and ("S" in userinput):
             main.galaxys(userinput)
         elif("GALAXY" in userinput):

@@ -6,12 +6,13 @@ class Main:
     """Main class for project; handles everything"""
     def __init__(self):
         print("Welcome to Troublegun Devices made by Jonny.\n\n\n"
-                   "The following question will help shoot your troubles:\n ")
+              "The following question will help shoot your troubles:\n")
         self.error = "I'm sorry I didn't understand...\n\n"
 
     def mainF(self):
         """Questioning functions"""
-        userinput = input("Please enter your device's brand: e.g. 'Apple'\n> ").lower()
+        userinput = input("Please enter your device's brand: e.g. 'Apple'\n> "
+                         ).lower()
         try:
             exec("from lib import {}" .format(userinput))
             exec("module = {}.{}.intro()" .format(userinput, userinput))
@@ -31,15 +32,16 @@ class Main:
         caseno = str(random.random())[2:]
         device = x
         print("Your device's manufacturer is not currently supported...\n")
-        userinput = str(input("Briefly describe your issue for our technicians:\n>"))
+        userinput = str(input("Briefly describe your issue for our technicians:"
+                              "\n> "))
         casefile = str("unsolved/" + caseno + " - " + device + ".dat")
         with open(casefile, "w+") as f:
             f.write(userinput)
 
     def quit(self):
         """Quit"""
-        userinput = (input("If you would like to quit, please type 'Q', or to restart type 'R'.\n>")
-                                ).lower()
+        userinput = (input("If you would like to quit, please type 'Q', or to "
+                           "restart type 'R'.\n> ")).lower()
         if (userinput == "q"):
             print ("Troublegun Shutting Down...\n")
             time.sleep(1)
