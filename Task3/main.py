@@ -1,5 +1,15 @@
 # A Python program to help troubleshoot mobile device issues
 # automatically with device specifics.
+import datetime, random
+
+"""
+
+99 little bugs in the code
+99 little bugs in the code
+Take one down, patch it around
+127 little bugs in the code
+
+"""
 
 __author__ = "Jonny"
 __version__ = "0.2"
@@ -14,25 +24,29 @@ class Main:
 
     def mainF(self):
         """Questioning functions"""
-        userinput = str.lower(str(input("Please enter your device's brand: e.g. 'Apple'\n")))
+        userinput = input("Please enter your device's brand: e.g. 'Apple'\n> ").lower
         try:
-            exec("import lib.{}" .format(userinput))
-            eval("module = lib.{}.{}.intro()" .format(userinput, userinput))
+            exec("from lib import {}" .format(userinput))
+            exec("module = {}.{}.intro()" .format(userinput, userinput))
             if(module != None):
                 main.failure(module)
             else:
                 main.quit()
-        except:
-            main.failure()
+        except Exception as e:
+            print(e)
+            main.failure(userinput)
             main.quit()
 
     def failure(self, x):
-        from datetime import datetime as d
-        exitcode = d.date.today() * 1000
+        #exitcode = int(datetime.date.today()) * 1000
+        caseno = str(random.random())[2:]
         device = x
         print("Your device's manufacturer is not currently supported...\n")
-        userinput = str.lower(str(input("Briefly describe your issue for our technicians:\n")))
-        exec("error = open('unsolved/{} - {}.dat', 'a+')" .format(caseno, device))
+        userinput = input("Briefly describe your issue for our technicians:\n")
+        exec("error = open('unsolved/{} - {}.dat', 'w+')" .format(caseno, device))
+        casefile = str("unsolved/" + caseno + " - " + device + ".dat")
+        with open(casefile, "w+") as f:
+            f.write(userinput)
 
     def quit(self):
         """Quit"""
