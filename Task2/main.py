@@ -1,13 +1,11 @@
 # A Python program to help troubleshoot mobile device issues
 # automatically with substrings.
-
-__author__ = "Jonny"
-__version__ = "0.1"
+import time
 
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("Welcome to Troublegun Substring v{} made by {}.\n\n\n"
+        print("Welcome to Troublegun Substring made by Jonny.\n\n\n"
                    "The following question will help shoot your troubles:\n "
                     .format(__version__, __author__))
         self.error = "I'm sorry I didn't understand...\n\n"
@@ -32,7 +30,6 @@ class Main:
             print("Someting went wrong...\n\n")
             main.quit()
 
-
     def solution(x):
         """Solutions, parsing exit code"""
         index = int(x)
@@ -44,14 +41,12 @@ class Main:
 
     def quit(self):
         """Quit"""
-        from sys import exit as ex
-        from time import sleep as sl
         userinput = str.upper(str(input("If you would like to quit, please type "
                                                                      "'Q', or to restart type 'R'.\n")))
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
-            sl(2)
-            ex()
+            time.sleep(1)
+            exit()
         elif (userinput == "R"):
             print ("Troublegun Restarting...\n\n")
             main.mainF()

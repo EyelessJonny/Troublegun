@@ -9,14 +9,14 @@ class Main:
         print("Galaxy S6 Edge Selected\n\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("",
-                              "Is your Galaxy S6 Edge under warranty? 'YES' or 'NO'\n",
-                              "Can your Galaxy S6 Edge be powered on? 'YES' or 'NO'.\n",
-                              "Have you turned your Galaxy S6 Edge off and on again? 'YES' or 'NO' \n",
-                              "Has your Galaxy S6 Edge's battery been charged? 'YES' or 'NO'\n",
-                              "Is your Galaxy S6 Edge's exterior damaged? 'YES' or'NO'\n",
-                              "Is your Galaxy S6 Edge wet? 'YES' or 'NO'\n",
-                              "Is your Galaxy S6 Edge infected with malware? 'YES' or 'NO'\n",
-                              "Is your Galaxy S6 Edge boot-looping? 'YES' or 'NO'\n")
+            "Is your Galaxy S6 Edge under warranty? 'YES' or 'NO'\n",
+            "Can your Galaxy S6 Edge be powered on? 'YES' or 'NO'.\n",
+            "Have you turned your Galaxy S6 Edge off and on again? 'YES' or 'NO' \n",
+            "Has your Galaxy S6 Edge's battery been charged? 'YES' or 'NO'\n",
+            "Is your Galaxy S6 Edge's exterior damaged? 'YES' or'NO'\n",
+            "Is your Galaxy S6 Edge wet? 'YES' or 'NO'\n",
+            "Is your Galaxy S6 Edge infected with malware? 'YES' or 'NO'\n",
+            "Is your Galaxy S6 Edge boot-looping? 'YES' or 'NO'\n")
         self.os = str
         self.warranty = str
         self.power = str

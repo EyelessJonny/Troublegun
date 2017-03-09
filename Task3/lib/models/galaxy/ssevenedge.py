@@ -1,4 +1,4 @@
-# Galaxy S7 Edge module
+# Galaxy S7 Edge Edge module
 
 __author__ = "Jonny"
 __version__ = "1.0"
@@ -6,17 +6,17 @@ __version__ = "1.0"
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("Galaxy S7 Edge Selected\n\n")
+        print("Galaxy S7 Edge Edge Selected\n\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("",
-                              "Is your Galaxy S7 Edge under warranty? 'YES' or 'NO'\n",
-                              "Can your Galaxy S7 Edge be powered on? 'YES' or 'NO'.\n",
-                              "Have you turned your Galaxy S7 Edge off and on again? 'YES' or 'NO' \n",
-                              "Has your Galaxy S7 Edge's battery been charged? 'YES' or 'NO'\n",
-                              "Is your Galaxy S7 Edge's exterior damaged? 'YES' or'NO'\n",
-                              "Is your Galaxy S7 Edge wet? 'YES' or 'NO'\n",
-                              "Is your Galaxy S7 Edge infected with malware? 'YES' or 'NO'\n",
-                              "Is your Galaxy S7 Edge boot-looping? 'YES' or 'NO'\n")
+            "Is your Galaxy S7 Edge under warranty? 'YES' or 'NO'\n",
+            "Can your Galaxy S7 Edge be powered on? 'YES' or 'NO'.\n",
+            "Have you turned your Galaxy S7 Edge off and on again? 'YES' or 'NO' \n",
+            "Has your Galaxy S7 Edge's battery been charged? 'YES' or 'NO'\n",
+            "Is your Galaxy S7 Edge's exterior damaged? 'YES' or'NO'\n",
+            "Is your Galaxy S7 Edge wet? 'YES' or 'NO'\n",
+            "Is your Galaxy S7 Edge infected with malware? 'YES' or 'NO'\n",
+            "Is your Galaxy S7 Edge boot-looping? 'YES' or 'NO'\n")
         self.os = str
         self.warranty = str
         self.power = str
