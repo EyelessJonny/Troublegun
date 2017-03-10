@@ -14,6 +14,7 @@ class Main:
         userinput = input("Please enter your device's brand: e.g. 'Apple'\n> "
                          ).lower()
         try:
+            module = None
             exec("from lib import {}" .format(userinput))
             exec("module = {}.{}.intro()" .format(userinput, userinput))
             if(module != None):
@@ -21,7 +22,7 @@ class Main:
             else:
                 main.quit()
         except Exception as e:
-            print(e)
+            print (e)
             if (module != None):
                 main.failure(module)
             else:
@@ -44,7 +45,6 @@ class Main:
                            "restart type 'R'.\n> ")).lower()
         if (userinput == "q"):
             print ("Troublegun Shutting Down...\n")
-            time.sleep(1)
             exit()
         elif (userinput == "r"):
             print ("Troublegun Restarting...\n\n")

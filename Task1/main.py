@@ -3,23 +3,25 @@
 __author__ = "Jonny"
 __version__ = "1.0"
 
+import time
+
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
         print("Welcome to Troublegun Flowchart v{} made by {}.\n\n\n"
-                   "The following questions  will help shoot your troubles:\n "
-                    .format(__version__, __author__))
+              "The following questions  will help shoot your troubles:\n "
+              .format(__version__, __author__))
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("What operating system does your mobile device use: 'ANDROID', "
-                              "OR 'IOS'.\n",
-                              "Is your device under warranty? 'YES' or 'NO'\n",
-                              "Can your mobile device be powered on? 'YES' or 'NO'.\n",
-                              "Have you turned your mobile device off and on again? 'YES' or 'NO' \n",
-                              "Has your device's battery been charged? 'YES' or 'NO'\n",
-                              "Is your device's exterior damaged? 'YES' or'NO'\n",
-                              "Is your device wet? 'YES' or 'NO'\n",
-                              "Is your device infected with malware? 'YES' or 'NO'\n",
-                              "Is your device boot-looping? 'YES' or 'NO'\n")
+                    "OR 'IOS'.\n",
+                    "Is your device under warranty? 'YES' or 'NO'\n",
+                    "Can your mobile device be powered on? 'YES' or 'NO'.\n",
+                    "Have you turned your mobile device off and on again? 'YES' or 'NO' \n",
+                    "Has your device's battery been charged? 'YES' or 'NO'\n",
+                    "Is your device's exterior damaged? 'YES' or'NO'\n",
+                    "Is your device wet? 'YES' or 'NO'\n",
+                    "Is your device infected with malware? 'YES' or 'NO'\n",
+                    "Is your device boot-looping? 'YES' or 'NO'\n")
         self.os = str
         self.warranty = str
         self.power = str
@@ -31,7 +33,7 @@ class Main:
         try:
             def qos(self):
                 """What OS?"""
-                userinput = str.upper(str(input(self.que[0])))
+                userinput = input(self.que[0]).upper()
                 if (userinput == "ANDROID") or (userinput == "A"):
                     print ("ANDROID selected!\n")
                     self.os = "Android"
@@ -46,7 +48,7 @@ class Main:
 
             def qwar(self):
                 """Warranty?"""
-                userinput = str.upper(str(input(self.que[1])))
+                userinput = input(self.que[1]).upper()
                 if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.warranty = "In warranty"
@@ -61,12 +63,12 @@ class Main:
 
             def qpow(self):
                 """Powered on?"""
-                userinput = str.upper(str(input(self.que[2])))
+                userinput = input(self.que[2]).upper()
                 if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.power = "On"
                     """Turn it off and on?"""
-                    userinput = str.upper(str(input(self.que[3])))
+                    userinput = input(self.que[3]).upper()
                     if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         qext(self)
@@ -80,11 +82,11 @@ class Main:
                     print ("NO selected!\n")
                     self.power = "Off"
                     """Charge?"""
-                    userinput = str.upper(str(input(self.que[4])))
+                    userinput = input(self.que[4]).upper()
                     if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         """Boot-loop?"""
-                        userinput = str.upper(str(input(self.que[8])))
+                        userinput = input(self.que[8]).upper()
                         if (userinput == "YES") or (userinput == "Y"):
                             print ("YES selected!\n")
                             main.solution(8)
@@ -106,12 +108,12 @@ class Main:
 
             def qext(self):
                 """Exterior?"""
-                userinput = str.upper(str(input(self.que[5])))
+                userinput = input(self.que[5]).upper()
                 if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.exterior = "Damaged"
                     """Wet"""
-                    userinput = str.upper(str(input(self.que[6])))
+                    userinput = input(self.que[6]).upper()
                     if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         main.solution(4)
@@ -131,7 +133,7 @@ class Main:
 
             def qwre(self):
                 """Malware?"""
-                userinput = str.upper(str(input(self.que[7])))
+                userinput = input(self.que[7]).upper()
                 if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     main.solution(5)
@@ -145,12 +147,14 @@ class Main:
 
             def neg(self):
                 """No problems"""
-                print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
-                       "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\nMalware: {}\n"
-                       .format(self.os, self.warranty, self.power, self.exterior, self.malware))
-                main.quit()
-        except:
-            print("Something went wrong\n\n")
+                print ("Troublegun can't find any troubles to shoot, here is "
+                       "your dump:\n Operating System: {}\nWarranty: {}\nPower:"
+                       " {}\nExterior: {}\nOperating System: {}\n{}\nMalware: {}\n"
+                       .format(self.os, self.warranty, self.power, self.exterior,
+                       self.malware))
+                main.quit()a
+        except Exception as e:
+            print("Something went wrong, error [{}]\n\n" .format(e))
             main.quit()
         qos(self)
 
@@ -167,14 +171,11 @@ class Main:
 
     def quit(self):
         """Quit"""
-        from sys import exit as brexit
-        from time import sleep as PMQs
-        userinput = str.upper(input("If you would like to quit, please type "
-                                                                "'Q', or to restart type 'R'.\n"))
+        userinput = (input("If you would like to quit, please type "
+                                    "'Q', or to restart type 'R'.\n")).upper()
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
-            PMQs(2)
-            brexit()
+            exit()
         elif (userinput == "R"):
             print ("Troublegun restarting...\n\n")
             main.mainF()

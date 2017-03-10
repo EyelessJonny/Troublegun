@@ -15,8 +15,8 @@ class Main:
         try:
             keywords = ("Broken", "Crack", "Smash", "Slow", "Crash", "", "", "", "", "", "")
             kindex = 0
-            userinput = str.upper(str(input("Please enter your issue:\n")))
-            while (str.upper(keywords[kindex]) not in userinput):
+            userinput = (input("Please enter your issue:\n")).upper()
+            while (keywords[kindex]).upper() not in userinput):
                 kindex += 1
             if (kindex < 2):
                 """Damaged"""
