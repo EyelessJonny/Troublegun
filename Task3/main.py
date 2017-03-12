@@ -11,9 +11,9 @@ class Main:
         self.error = "I'm sorry I didn't understand...\n\n"
 
     def mainF(self):
-        """Questioning functions"""
+        """Questioning functions
         userinput = (input("Please enter your device's brand: e.g. 'Apple'\n> ")
-                    ).lower()
+        ).lower()
         try:
             module = None
             exec("from lib import {}" .format(userinput))
@@ -36,12 +36,27 @@ class Main:
                 print("Your device's manufacturer is not currently "
                       "supported...\n")
                 main.failure(userinput)
-            main.quit()
+        main.quit"""
+
+        userinput = (input("Please enter a module to test:\n> ")).lower()
+        try:
+            module = None
+            exec("from lib import {}" .format(userinput))
+            exec("module = {}.{}.intro()" .format(userinput, userinput))
+            if(module != None):
+                print("1")
+            else:
+                print("2")
+        except Exception as e:
+            print("Something went wrong, error [{}]\n\n" .format(e))
+            if (module != None):
+                print("3" )
+            else:
+                print("4")
 
     def failure(self, x):
         caseno = str(random.random())[2:]
         device = x.upper()
-
         userinput = str(input("Briefly describe your issue for our technicians:"
                               "\n> "))
         casefile = str("unsolved/" + caseno + " - " + device + ".dat")
