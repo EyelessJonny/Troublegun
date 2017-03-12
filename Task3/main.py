@@ -1,5 +1,6 @@
 # A Python program to help troubleshoot mobile device issues
 # automatically with device specifics.
+
 import datetime, random, time
 
 class Main:
@@ -11,28 +12,36 @@ class Main:
 
     def mainF(self):
         """Questioning functions"""
-        userinput = input("Please enter your device's brand: e.g. 'Apple'\n> "
-                         ).lower()
+        userinput = (input("Please enter your device's brand: e.g. 'Apple'\n> ")
+                    ).lower()
         try:
             module = None
             exec("from lib import {}" .format(userinput))
             exec("module = {}.{}.intro()" .format(userinput, userinput))
-            if(module != None):
-                main.failure(module)
-            else:
-                main.quit()
-        except Exception as e:
-            print (e)
             if (module != None):
+                print("1")
+                #print("Your device is not currently supported...\n")
+                #main.failure(module)
+            else:
+                print("2")
+                #main.quit()
+        except Exception as e:
+            print("Something went wrong, error [{}]\n\n" .format(e))
+            if (module != None):
+                print("3")
+                print("Your device is not currently supported...\n")
                 main.failure(module)
             else:
+                print("4")
+                print("Your device's manufacturer is not currently "
+                      "supported...\n")
                 main.failure(userinput)
             main.quit()
 
     def failure(self, x):
         caseno = str(random.random())[2:]
-        device = x
-        print("Your device's manufacturer is not currently supported...\n")
+        device = x.upper()
+
         userinput = str(input("Briefly describe your issue for our technicians:"
                               "\n> "))
         casefile = str("unsolved/" + caseno + " - " + device + ".dat")

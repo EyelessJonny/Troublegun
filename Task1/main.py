@@ -33,7 +33,7 @@ class Main:
         try:
             def qos(self):
                 """What OS?"""
-                userinput = input(self.que[0]).upper()
+                userinput = (input(self.que[0])).upper()
                 if (userinput == "ANDROID") or (userinput == "A"):
                     print ("ANDROID selected!\n")
                     self.os = "Android"
@@ -48,7 +48,7 @@ class Main:
 
             def qwar(self):
                 """Warranty?"""
-                userinput = input(self.que[1]).upper()
+                userinput = (input(self.que[1])).upper()
                 if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.warranty = "In warranty"
@@ -63,12 +63,12 @@ class Main:
 
             def qpow(self):
                 """Powered on?"""
-                userinput = input(self.que[2]).upper()
+                userinput = (input(self.que[2])).upper()
                 if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.power = "On"
                     """Turn it off and on?"""
-                    userinput = input(self.que[3]).upper()
+                    userinput = (input(self.que[3])).upper()
                     if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         qext(self)
@@ -82,11 +82,11 @@ class Main:
                     print ("NO selected!\n")
                     self.power = "Off"
                     """Charge?"""
-                    userinput = input(self.que[4]).upper()
+                    userinput = (input(self.que[4])).upper()
                     if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         """Boot-loop?"""
-                        userinput = input(self.que[8]).upper()
+                        userinput = (input(self.que[8])).upper()
                         if (userinput == "YES") or (userinput == "Y"):
                             print ("YES selected!\n")
                             main.solution(8)
@@ -108,12 +108,12 @@ class Main:
 
             def qext(self):
                 """Exterior?"""
-                userinput = input(self.que[5]).upper()
+                userinput = (input(self.que[5])).upper()
                 if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     self.exterior = "Damaged"
                     """Wet"""
-                    userinput = input(self.que[6]).upper()
+                    userinput = (input(self.que[6])).upper()
                     if (userinput == "YES") or (userinput == "Y"):
                         print ("YES selected!\n")
                         main.solution(4)
@@ -133,7 +133,7 @@ class Main:
 
             def qwre(self):
                 """Malware?"""
-                userinput = input(self.que[7]).upper()
+                userinput = (input(self.que[7])).upper()
                 if (userinput == "YES") or (userinput == "Y"):
                     print ("YES selected!\n")
                     main.solution(5)
@@ -161,9 +161,9 @@ class Main:
     def solution(self, x):
         """Solutions, parsing exit code"""
         index = int(x)
-        if(str.upper(self.os) == "IOS"):
+        if (str.upper(self.os) == "IOS"):
             index += 10
-        sol = open("solutions.txt")
+        sol = open("solutions.dat")
         solutions = sol.readlines()
         print (solutions[index])
         sol.close()

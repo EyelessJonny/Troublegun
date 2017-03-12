@@ -22,13 +22,10 @@ class Apple:
             version = "sixs"
         elif("IPHONE" in x) and ("SE" in x):
             version = "se"
-        elif("IPOD" in x) or ("IPAD" in x):
-            return userinput
         else:
-            print (self.error)
-            apple.intro()
+            return userinput
         exec("import lib.models.iphone.{}" .format(version))
-
+        
 if (__name__ != "__main__"):
     apple = Apple()
 else:
