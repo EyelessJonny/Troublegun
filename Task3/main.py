@@ -1,7 +1,7 @@
 # A Python program to help troubleshoot mobile device issues
 # automatically with device specifics.
 
-import datetime, random, time
+import datetime, random, time, lib
 
 class Main:
     """Main class for project; handles everything"""
@@ -15,6 +15,7 @@ class Main:
         userinput = (input("Please enter your device's brand: e.g. 'Apple'\n> ")
         ).lower()
         try:
+            module = None
             exec("from lib import {}" .format(userinput))
             exec("module = {}.{}.intro()" .format(userinput, userinput))
             if (module != None):
