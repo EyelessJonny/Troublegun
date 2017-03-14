@@ -15,6 +15,7 @@ class Main:
         userinput = (input("Please enter your device's brand: e.g. 'Apple'\n> ")
         ).lower()
         try:
+            module = None
             exec("from lib import {}" .format(userinput))
             exec("module = {}.{}.intro()" .format(userinput, userinput))
             if (module != None):

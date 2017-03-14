@@ -25,7 +25,7 @@ class Apple:
         else:
             return userinput
         exec("import lib.models.iphone.{}" .format(version))
-        
+
 if (__name__ != "__main__"):
     apple = Apple()
 else:
