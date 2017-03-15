@@ -6,16 +6,16 @@ import random, time, lib
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("Welcome to Troublegun Devices for Python 3.6\n\n\n"
+        print("--==[Troublegun Devices for Python 3.6]==--\n\n\n"
               "The following question will help shoot your troubles:\n")
         self.error = "I'm sorry I didn't understand...\n\n"
 
     def mainF(self):
-        """Questioning functions"""
+        """Import and return management"""
         userinput = (input("Please enter your device's brand: e.g. 'Apple'\n> ")
-        ).lower()
+                                ).lower()
         try:
-            obj = main.apple()
+            exec("obj = main.{}()" .format(userinput))
             if (obj != None):
                 print("1")
                 print("Your device is not currently supported...\n")
@@ -37,7 +37,7 @@ class Main:
 
     def apple(self):
         """Selection function"""
-        print ("Troublegun Apple Initialized...")
+        print ("\n\n--==[Troublegun Apple Initialized]==--\n\n")
         userinput = (input("What model of Apple device do you have? e.g. "
                            "'iPhone 7 Plus\n> ")).upper()
         x = userinput
@@ -53,7 +53,25 @@ class Main:
             version = "se"
         else:
             return userinput
-        exec("import lib.models.iphone.{}" .format(version))
+        exec("import lib.iphone.{}" .format(version))
+
+    def samsung(self):
+        """Selection"""
+        userinput = str.upper(str(input("What model of Samsung device do you"
+                                        "have? e.g 'Galaxy S6 Edge+'\n> ")))
+        if("GALAXY" in userinput) and ("GALAXY" in userinput) and ("7" in userinput) and ("EDGE" in userinput):
+            version = "ssevenedge"
+        elif("GALAXY" in userinput) and ("7" in userinput) and ("EDGE" not in userinput):
+            version = "sseven"
+        elif("GALAXY" in userinput) and ("6" in userinput) and ("+" in userinput) and ("EDGE" in userinput):
+            version = "ssixedge+"
+        elif("GALAXY" in userinput) and ("6" in userinput) and ("+" not in userinput) and ("EDGE" in userinput):
+            version = "ssixedge"
+        elif("GALAXY" in userinput) and ("6" in userinput) and ("+" not in userinput) and ("EDGE" not in userinput):
+            version = "ssix"
+        else:
+            return userinput
+        exec("import lib.galaxy.{}" .format(version))
 
     def failure(self, x):
         caseno = str(random.random())[2:]
@@ -77,8 +95,6 @@ class Main:
         else:
             print (self.error)
             main.quit()
-
-
 
 if (__name__ == "__main__"):
     main = Main()
