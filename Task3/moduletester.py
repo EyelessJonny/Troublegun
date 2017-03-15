@@ -1,12 +1,13 @@
 # A Python script used to test modules which can only be run on import,
 # but which auto run on import.
 
+import lib
+
 def myfunc():
     userinput = (input("Please enter a module to test:\n> ")).lower()
     try:
         module = None
-        exec("from lib import {}" .format(userinput))
-        exec("module = {}.{}.intro()" .format(userinput, userinput))
+        exec("module = lib.{}.{}.intro()" .format(userinput, userinput))
         if(module != None):
             print("1")
         else:

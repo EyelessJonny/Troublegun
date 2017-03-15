@@ -1,8 +1,5 @@
 # A Python program to help troubleshoot mobile device issues automatically.
 
-__author__ = "Jonny"
-__version__ = "1.0"
-
 import time
 
 class Main:
