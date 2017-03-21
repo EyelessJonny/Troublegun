@@ -35,7 +35,7 @@ class Main:
                 print("Your device's manufacturer is not currently "
                       "supported...\n")
                 main.failure(userinput)
-        #main.quit()
+        main.quit()
 
     def failure(self, x):
         caseno = str(random.random())[2:]

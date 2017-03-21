@@ -5,9 +5,8 @@ import time
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("Welcome to Troublegun Flowchart v{} made by {}.\n\n\n"
-              "The following questions  will help shoot your troubles:\n "
-              .format(__version__, __author__))
+        print("--==[Troublegun Question for Python 3.6]==--\n\n\n"
+              "The following questions  will help shoot your troubles:\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("What operating system does your mobile device use: 'ANDROID', "
                     "OR 'IOS'.\n",
@@ -149,7 +148,7 @@ class Main:
                        " {}\nExterior: {}\nOperating System: {}\n{}\nMalware: {}\n"
                        .format(self.os, self.warranty, self.power, self.exterior,
                        self.malware))
-                main.quit()a
+                main.quit()
         except Exception as e:
             print("Something went wrong, error [{}]\n\n" .format(e))
             main.quit()
@@ -160,10 +159,9 @@ class Main:
         index = int(x)
         if (str.upper(self.os) == "IOS"):
             index += 10
-        sol = open("solutions.dat")
-        solutions = sol.readlines()
-        print (solutions[index])
-        sol.close()
+        with open("solutions.dat") as f:
+            solutions = f.readlines()
+            print (solutions[index])
         main.quit()
 
     def quit(self):
