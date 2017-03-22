@@ -11,33 +11,30 @@ class Main:
 
     def mainF(self):
         """Questioning functions"""
-        damaged = ("Broken", "Crack", "Smash", "Slow", "Crash", "",
-                    "", "", "", "", "")
+        damaged = ("BROKEN", "CRACK", "SMASH")
+        offnon = ("SLOW", "CRASH", "")
+        charge = ("OFF", "", "")
+        wet = ("", "", "")
+        infected = ("INFECTED", "MALWARE", "AD")
+        data = ("", "", "")
+        bootloop = ("BOOT", "LOOP", "")
         kindex = 0
         userinput = (input("Please enter your issue:\n")).upper()
-        if (userinput in any(damaged)):
-            print("Yes")
-        else:
-            print(self.error)
-            main.MainF()
-#        try:
-#            damaged = ("Broken", "Crack", "Smash", "Slow", "Crash", "",
-#                        "", "", "", "", "")
-#            kindex = 0
-#            userinput = (input("Please enter your issue:\n")).upper()
-#            if (any(damaged) in userinput):
-#                print("Yes")
-#            else:
-#                print(self.error)
-#                main.MainF()
-#        except:
-#            print("Someting went wrong...\n\n")
-#            main.quit()
+
+        if any(var in userinput for var in damaged):
+            main.solution(0)
+        elif any(var in userinput for var in offnon):
+            main.solution(1)
+        elif any(var in userinput for var in charge):
+            main.solution(2)
+        elif any(var in userinput for var in wet):
+            main.solution(3)
+        elif any(var in userinput for var in infected):
 
     def solution(x):
         """Solutions, parsing exit code"""
         index = int(x)
-        sol = open("solutions.txt")
+        sol = open("solutions.dat")
         solutions = sol.readlines()
         print (solutions[index])
         sol.close()
