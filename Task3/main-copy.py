@@ -14,27 +14,24 @@ class Main:
         """Questioning functions"""
         userinput = (input("Please enter your device's brand: e.g. 'Apple'\n> ")
         ).lower()
-        try:
-            module = None
-            exec("from lib import {}" .format(userinput))
-            exec("module = {}.{}.intro()" .format(userinput, userinput))
-            if (module != None):
-                print("1")
-                print("Your device is not currently supported...\n")
-                main.failure(module)
-            else:
-                print("2")
-        except Exception as e:
-            print("Something went wrong, error [{}]\n\n" .format(e))
-            if (module != None):
-                print("3")
-                print("Your device is not currently supported...\n")
-                main.failure(module)
-            else:
-                print("4")
-                print("Your device's manufacturer is not currently "
-                      "supported...\n")
-                main.failure(userinput)
+
+        if (userinput == "apple"):
+            from lib import apple as a
+            module = a.apple.intro()
+            global module
+        elif (userinput == "samsung")
+            from lib import samsung as s
+            module = s.samsung.intro()
+            global module
+        else:
+            module = userinput
+
+    def support(self):
+        if (module != None):
+            print("Your device is not currently supported...\n")
+            main.failure(module)
+        else:
+
         main.quit()
 
     def failure(self, x):

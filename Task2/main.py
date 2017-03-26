@@ -7,19 +7,18 @@ class Main:
     def __init__(self):
         print("--==[Troublegun Susbstring for Python 3.6]==--\n\n\n"
               "The following question will help shoot your troubles:\n")
-        self.error = "I'm sorry I didn't understand...\n\n"
 
     def mainF(self):
         """Questioning functions"""
         damaged = ("BROKEN", "CRACK", "SMASH")
-        offnon = ("SLOW", "CRASH", "")
-        charge = ("OFF", "", "")
-        wet = ("", "", "")
+        offnon = ("SLOW", "CRASH")
+        charge = ("OFF", "POWER")
+        wet = ("WET", "WATER")
         infected = ("INFECTED", "MALWARE", "AD")
-        data = ("", "", "")
-        bootloop = ("BOOT", "LOOP", "")
+        data = ("CORRUPT", "GONE", "WIPE")
+        bootloop = ("BOOT", "LOOP")
         kindex = 0
-        userinput = (input("Please enter your issue:\n")).upper()
+        userinput = (input("Please enter your issue:\n> ")).upper()
 
         if any(var in userinput for var in damaged):
             main.solution(0)
@@ -30,14 +29,21 @@ class Main:
         elif any(var in userinput for var in wet):
             main.solution(3)
         elif any(var in userinput for var in infected):
+            main.solution(4)
+        elif any(var in userinput for var in data):
+            main.solution(5)
+        elif any(var in userinput for var in bootloop):
+            main.solution(6)
+        else:
+            print("I could not interpret your problem.\n")
+            main.quit()
 
-    def solution(x):
+    def solution(self, x):
         """Solutions, parsing exit code"""
         index = int(x)
-        sol = open("solutions.dat")
-        solutions = sol.readlines()
-        print (solutions[index])
-        sol.close()
+        with open("solutions.dat") as f:
+            solutions = f.readlines()
+            print (solutions[index])
         main.quit()
 
     def quit(self):
@@ -52,7 +58,7 @@ class Main:
             print ("Troublegun Restarting...\n\n")
             main.mainF()
         else:
-            print (self.error)
+            print ("I'm sorry I didn't understand...\n\n")
             main.quit()
 
 if (__name__ == "__main__"):
