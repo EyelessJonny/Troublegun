@@ -1,7 +1,7 @@
 # A Python program to help troubleshoot mobile device issues
 # automatically with device specifics.
 
-import datetime, random, time
+import random, time
 
 class Main:
     """Main class for project; handles everything"""
@@ -12,27 +12,32 @@ class Main:
 
     def mainF(self):
         """Questioning functions"""
-        userinput = (input("Please enter your device's brand: e.g. 'Apple'\n> ")
-        ).lower()
+        userinput = (input("Please enter your device's "
+                           "brand: e.g. 'Apple'\n> ")).lower()
+        r = imports()
+        c = checkModule()
+        if (c == True):
 
+        main.quit()
+
+    def imports():
         if (userinput == "apple"):
             from lib import apple as a
             module = a.apple.intro()
-            global module
+            return module
         elif (userinput == "samsung")
             from lib import samsung as s
             module = s.samsung.intro()
-            global module
+            return module
         else:
-            module = userinput
+            return = userinput
 
-    def support(self):
+    def checkModule(self):
         if (module != None):
             print("Your device is not currently supported...\n")
-            main.failure(module)
+            return False
         else:
-
-        main.quit()
+            return True
 
     def failure(self, x):
         caseno = str(random.random())[2:]
