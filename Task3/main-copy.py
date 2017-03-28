@@ -14,25 +14,28 @@ class Main:
         """Questioning functions"""
         userinput = (input("Please enter your device's "
                            "brand: e.g. 'Apple'\n> ")).lower()
-        r = imports()
-        c = checkModule()
+        r = main.imports(userinput)
+        c = main.checkModule(r)
         if (c == True):
-
+            pass
+        elif(c == False):
+            main.failure(r)
         main.quit()
 
-    def imports():
+    def imports(self, userinput):
+        global module
         if (userinput == "apple"):
             from lib import apple as a
             module = a.apple.intro()
             return module
-        elif (userinput == "samsung")
+        elif (userinput == "samsung"):
             from lib import samsung as s
             module = s.samsung.intro()
             return module
         else:
-            return = userinput
+            return userinput
 
-    def checkModule(self):
+    def checkModule(self, module):
         if (module != None):
             print("Your device is not currently supported...\n")
             return False

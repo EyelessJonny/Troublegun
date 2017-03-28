@@ -8,10 +8,8 @@ class Apple:
 
     def intro(self):
         """Selection function"""
-        userinput = (input("What model of Apple device do you have? e.g. "
-                           "'iPhone 7 Plus\n> ")).upper()
-        """X for line length"""
-        x = userinput
+        x = (input("What model of Apple device do you have? e.g. "
+                   "'iPhone 7 Plus\n> ")).upper()
         if("IPHONE" in x) and ("7" in x) and ("PLUS" in x):
             version = "sevenplus"
         elif("IPHONE" in x) and ("7" in x) and ("PLUS" not in x):
@@ -23,7 +21,7 @@ class Apple:
         elif("IPHONE" in x) and ("SE" in x):
             version = "se"
         else:
-            return userinput
+            return x
         exec("import lib.models.iphone.{}" .format(version))
 
 if (__name__ != "__main__"):
