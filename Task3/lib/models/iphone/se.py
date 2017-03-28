@@ -9,14 +9,14 @@ class Main:
         print("iPhone SE Selected\n\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("",
-                              "Is your iPhone SE under warranty? 'YES' or 'NO'\n",
-                              "Can your iPhone SE be powered on? 'YES' or 'NO'.\n",
-                              "Have you turned your iPhone SE off and on again? 'YES' or 'NO' \n",
-                              "Has your iPhone SE's battery been charged? 'YES' or 'NO'\n",
-                              "Is your iPhone SE's exterior damaged? 'YES' or'NO'\n",
-                              "Is your iPhone SE wet? 'YES' or 'NO'\n",
-                              "Is your iPhone SE infected with malware? 'YES' or 'NO'\n",
-                              "Is your iPhone SE boot-looping? 'YES' or 'NO'\n")
+          "Is your iPhone SE under warranty? 'YES' or 'NO'\n> ",
+          "Can your iPhone SE be powered on? 'YES' or 'NO'\n> ",
+          "Have you turned your iPhone SE off and on again? 'YES' or 'NO'\n> ",
+          "Has your iPhone SE's battery been charged? 'YES' or 'NO'\n> ",
+          "Is your iPhone SE's exterior damaged? 'YES' or'NO'\n> ",
+          "Is your iPhone SE wet? 'YES' or 'NO'\n> ",
+          "Is your iPhone SE infected with malware? 'YES' or 'NO'\n> ",
+          "Is your iPhone SE boot-looping? 'YES' or 'NO'\n> ")
         self.os = str
         self.warranty = str
         self.power = str
@@ -136,10 +136,10 @@ class Main:
                 print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
                        "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\nMalware: {}\n"
                        .format(self.os, self.warranty, self.power, self.exterior, self.malware))
-                main.quit()
+                return
         except:
             print("Something went wrong\n\n")
-            main.quit()
+            return
         qos(self)
 
     def solution(self, x):

@@ -9,14 +9,14 @@ class Main:
         print("Galaxy S6 Selected\n\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("",
-            "Is your Galaxy S6  under warranty? 'YES' or 'NO'\n",
-            "Can your Galaxy S6  be powered on? 'YES' or 'NO'.\n",
-            "Have you turned your Galaxy S6  off and on again? 'YES' or 'NO' \n",
-            "Has your Galaxy S6 's battery been charged? 'YES' or 'NO'\n",
-            "Is your Galaxy S6 's exterior damaged? 'YES' or'NO'\n",
-            "Is your Galaxy S6  wet? 'YES' or 'NO'\n",
-            "Is your Galaxy S6  infected with malware? 'YES' or 'NO'\n",
-            "Is your Galaxy S6  boot-looping? 'YES' or 'NO'\n")
+            "Is your Galaxy S6  under warranty? 'YES' or 'NO'\n> ",
+            "Can your Galaxy S6  be powered on? 'YES' or 'NO'\n> ",
+            "Have you turned your Galaxy S6  off and on again? 'YES' or 'NO'\n> ",
+            "Has your Galaxy S6 's battery been charged? 'YES' or 'NO'\n> ",
+            "Is your Galaxy S6 's exterior damaged? 'YES' or'NO'\n> ",
+            "Is your Galaxy S6  wet? 'YES' or 'NO'\n> ",
+            "Is your Galaxy S6  infected with malware? 'YES' or 'NO'\n> ",
+            "Is your Galaxy S6  boot-looping? 'YES' or 'NO'\n> ")
         self.os = str
         self.warranty = str
         self.power = str
@@ -136,10 +136,10 @@ class Main:
                 print ("Troublegun can't find any troubles to shoot, here is your dump:\n"
                        "Operating System: {}\nWarranty: {}\nPower: {}\nExterior: {}\nMalware: {}\n"
                        .format(self.os, self.warranty, self.power, self.exterior, self.malware))
-                main.quit()
+                return
         except:
             print("Something went wrong\n\n")
-            main.quit()
+            return
         qos(self)
 
     def solution(self, x):

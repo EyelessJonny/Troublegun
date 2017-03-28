@@ -9,15 +9,15 @@ class Main:
               "The following questions  will help shoot your troubles:\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("What operating system does your mobile device use: 'ANDROID', "
-                    "OR 'IOS'.\n",
-                    "Is your device under warranty? 'YES' or 'NO'\n",
-                    "Can your mobile device be powered on? 'YES' or 'NO'.\n",
-                    "Have you turned your mobile device off and on again? 'YES' or 'NO' \n",
-                    "Has your device's battery been charged? 'YES' or 'NO'\n",
-                    "Is your device's exterior damaged? 'YES' or'NO'\n",
-                    "Is your device wet? 'YES' or 'NO'\n",
-                    "Is your device infected with malware? 'YES' or 'NO'\n",
-                    "Is your device boot-looping? 'YES' or 'NO'\n")
+                    "OR 'IOS'.\n> ",
+                    "Is your device under warranty? 'YES' or 'NO'\n> ",
+                    "Can your mobile device be powered on? 'YES' or 'NO'\n> ",
+                    "Have you turned your mobile device off and on again? 'YES' or 'NO'\n> ",
+                    "Has your device's battery been charged? 'YES' or 'NO'\n> ",
+                    "Is your device's exterior damaged? 'YES' or'NO'\n> ",
+                    "Is your device wet? 'YES' or 'NO'\n> ",
+                    "Is your device infected with malware? 'YES' or 'NO'\n> ",
+                    "Is your device boot-looping? 'YES' or 'NO'\n> ")
         self.os = str
         self.warranty = str
         self.power = str
@@ -167,7 +167,7 @@ class Main:
     def quit(self):
         """Quit"""
         userinput = (input("If you would like to quit, please type "
-                                    "'Q', or to restart type 'R'.\n")).upper()
+                                    "'Q', or to restart type 'R'.\n> ")).upper()
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
             exit()

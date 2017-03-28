@@ -12,7 +12,7 @@ class Main:
         """Questioning functions"""
         damaged = ("BROKEN", "CRACK", "SMASH")
         offnon = ("SLOW", "CRASH")
-        charge = ("OFF", "POWER")
+        charge = ("OFF", "POWER", "TURN")
         wet = ("WET", "WATER")
         infected = ("INFECTED", "MALWARE", "AD")
         data = ("CORRUPT", "GONE", "WIPE")
@@ -49,7 +49,7 @@ class Main:
     def quit(self):
         """Quit"""
         userinput = (input("If you would like to quit, please type "
-                            "'Q', or to restart type 'R'.\n")).upper()
+                            "'Q', or to restart type 'R'.\n> ")).upper()
         if (userinput == "Q"):
             print ("Troublegun Shutting Down...\n")
             time.sleep(1)
