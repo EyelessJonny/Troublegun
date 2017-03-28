@@ -5,8 +5,8 @@ import time
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("--==[Troublegun Question for Python 3.6]==--\n\n\n"
-              "The following questions  will help shoot your troubles:\n")
+        print("\n--==[Troublegun Task 1 for Python 3.6]==--\n\n\n"
+              "The following questions will help shoot your troubles:\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("What operating system does your mobile device use: 'ANDROID', "
                     "OR 'IOS'.\n> ",
@@ -159,25 +159,22 @@ class Main:
         index = int(x)
         if (str.upper(self.os) == "IOS"):
             index += 10
-        with open("solutions.dat") as f:
+        with open("Task1/solutions.dat") as f:
             solutions = f.readlines()
             print (solutions[index])
         main.quit()
 
     def quit(self):
         """Quit"""
-        userinput = (input("If you would like to quit, please type "
-                                    "'Q', or to restart type 'R'.\n> ")).upper()
+        userinput = (input("If you would like to quit Task 1, please type "
+                           "'Q', or to restart type 'R'.\n> ")).upper()
         if (userinput == "Q"):
-            print ("Troublegun Shutting Down...\n")
-            exit()
+            print ("Troublegun Task 1 Shutting Down...\n")
+            return
         elif (userinput == "R"):
-            print ("Troublegun restarting...\n\n")
+            print ("Troublegun Task 1 Restarting...\n\n")
             main.mainF()
         else:
             print (self.error)
             main.quit()
-
-if (__name__ == "__main__"):
-    main = Main()
-    main.mainF()
+main = Main()

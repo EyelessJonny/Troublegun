@@ -1,11 +1,11 @@
 # A Python program to help troubleshoot mobile device issues
 # automatically with substrings.
-import time
+
 
 class Main:
-    """Main class for project; handles everything"""
+    """Main class for task; handles everything"""
     def __init__(self):
-        print("--==[Troublegun Susbstring for Python 3.6]==--\n\n\n"
+        print("\n--==[Troublegun Task 2 for Python 3.6]==--\n\n\n"
               "The following question will help shoot your troubles:\n")
 
     def mainF(self):
@@ -41,28 +41,23 @@ class Main:
     def solution(self, x):
         """Solutions, parsing exit code"""
         index = int(x)
-        with open("solutions.dat") as f:
+        with open("Task2/solutions.dat") as f:
             solutions = f.readlines()
             print (solutions[index])
         main.quit()
 
     def quit(self):
         """Quit"""
-        userinput = (input("If you would like to quit, please type "
+        userinput = (input("If you would like to quit Task 2, please type "
                             "'Q', or to restart type 'R'.\n> ")).upper()
         if (userinput == "Q"):
-            print ("Troublegun Shutting Down...\n")
-            time.sleep(1)
-            exit()
+            print ("Troublegun Task 2 Shutting Down...\n")
+            return
         elif (userinput == "R"):
-            print ("Troublegun Restarting...\n\n")
+            print ("Troublegun Task 2 Restarting...\n\n")
             main.mainF()
         else:
             print ("I'm sorry I didn't understand...\n\n")
             main.quit()
 
-if (__name__ == "__main__"):
-    main = Main()
-    main.mainF()
-else:
-    print ("Please run Main.py")
+main = Main()
