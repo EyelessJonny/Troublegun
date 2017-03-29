@@ -5,7 +5,7 @@
 class Main:
     """Main class for task; handles everything"""
     def __init__(self):
-        print("\n--==[Troublegun Task 2 for Python 3.6]==--\n\n\n"
+        print("\n--==[Troublegun Task 2 for Python 3.6]==--\n\n"
               "The following question will help shoot your troubles:\n")
 
     def mainF(self):

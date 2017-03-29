@@ -1,11 +1,10 @@
 # A Python program to help troubleshoot mobile device issues automatically.
 
-import time
 
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("\n--==[Troublegun Task 1 for Python 3.6]==--\n\n\n"
+        print("\n--==[Troublegun Task 1 for Python 3.6]==--\n\n"
               "The following questions will help shoot your troubles:\n")
         self.error = "I'm sorry I didn't understand...\n\n"
         self.que = ("What operating system does your mobile device use: 'ANDROID', "
@@ -18,11 +17,11 @@ class Main:
                     "Is your device wet? 'YES' or 'NO'\n> ",
                     "Is your device infected with malware? 'YES' or 'NO'\n> ",
                     "Is your device boot-looping? 'YES' or 'NO'\n> ")
-        self.os = str
+        self.os       = str
         self.warranty = str
-        self.power = str
+        self.power    = str
         self.exterior = str
-        self.malware = str
+        self.malware  = str
 
     def mainF(self):
         """Questioning functions"""
@@ -77,6 +76,7 @@ class Main:
                 elif (userinput == "NO") or (userinput == "N"):
                     print ("NO selected!\n")
                     self.power = "Off"
+
                     """Charge?"""
                     userinput = (input(self.que[4])).upper()
                     if (userinput == "YES") or (userinput == "Y"):
@@ -157,7 +157,7 @@ class Main:
     def solution(self, x):
         """Solutions, parsing exit code"""
         index = int(x)
-        if (str.upper(self.os) == "IOS"):
+        if (self.os == "iOS"):
             index += 10
         with open("Task1/solutions.dat") as f:
             solutions = f.readlines()
@@ -177,4 +177,5 @@ class Main:
         else:
             print (self.error)
             main.quit()
+            
 main = Main()

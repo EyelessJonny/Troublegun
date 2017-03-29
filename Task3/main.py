@@ -1,12 +1,12 @@
 # A Python program to help troubleshoot mobile device issues
 # automatically with device specifics.
 
-import random, time
+import random
 
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
-        print("--==[Troublegun Devices for Python 3.6]==--\n\n\n"
+        print("\n--==[Troublegun Devices for Python 3.6]==--\n\n"
               "The following question will help shoot your troubles:\n")
 
     def mainF(self):
