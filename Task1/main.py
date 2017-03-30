@@ -4,6 +4,7 @@
 class Main:
     """Main class for project; handles everything"""
     def __init__(self):
+        """Welcome and Variable declaration"""
         print("\n--==[Troublegun Task 1 for Python 3.6]==--\n\n"
               "The following questions will help shoot your troubles:\n")
         self.error = "I'm sorry I didn't understand...\n\n"
@@ -16,12 +17,14 @@ class Main:
                     "Is your device's exterior damaged? 'YES' or'NO'\n> ",
                     "Is your device wet? 'YES' or 'NO'\n> ",
                     "Is your device infected with malware? 'YES' or 'NO'\n> ",
-                    "Is your device boot-looping? 'YES' or 'NO'\n> ")
+                    "Is your device boot-looping? 'YES' or 'NO'\n> "
+                    "Has any data been corrupted? 'YES' or 'NO'\n> ")
         self.os       = str
         self.warranty = str
         self.power    = str
         self.exterior = str
         self.malware  = str
+        self.data     = str
 
     def mainF(self):
         """Questioning functions"""
@@ -122,6 +125,20 @@ class Main:
                 elif (userinput == "NO") or (userinput == "N"):
                     print ("NO selected!\n")
                     self.exterior = "Not damaged"
+                    qdat(self)
+                else:
+                    print (self.error)
+                    qext(self)
+
+            def qdat(self):
+                """Data corruption?"""
+                userinput = (input(self.que[9])).upper()
+                if (userinput == "YES") or (userinput == "Y"):
+                    print ("YES selected!\n")
+                    main.solution(6)
+                elif (userinput == "NO") or (userinput == "N"):
+                    print ("NO selected!\n")
+                    self.data = "Not corrupted"
                     qwre(self)
                 else:
                     print (self.error)
@@ -145,9 +162,9 @@ class Main:
                 """No problems"""
                 print ("Troublegun can't find any troubles to shoot, here is "
                        "your dump:\n Operating System: {}\nWarranty: {}\nPower:"
-                       " {}\nExterior: {}\nOperating System: {}\n{}\nMalware: {}\n"
+                       " {}\nExterior: {}\nData: {}\nMalware: {}\n"
                        .format(self.os, self.warranty, self.power, self.exterior,
-                       self.malware))
+                       self.data,self.malware))
                 main.quit()
         except Exception as e:
             print("Something went wrong, error [{}]\n\n" .format(e))
@@ -177,5 +194,5 @@ class Main:
         else:
             print (self.error)
             main.quit()
-            
+
 main = Main()
