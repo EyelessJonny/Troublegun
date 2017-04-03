@@ -20,19 +20,19 @@ class Main:
         kindex = 0
         userinput = (input("Please enter your issue:\n> ")).upper()
 
-        if any(var in userinput for var in damaged):
+        if any(i in userinput for i in damaged):
             main.solution(0)
-        elif any(var in userinput for var in offnon):
+        elif any(i in userinput for i in offnon):
             main.solution(1)
-        elif any(var in userinput for var in charge):
+        elif any(i in userinput for i in charge):
             main.solution(2)
-        elif any(var in userinput for var in wet):
+        elif any(i in userinput for i in wet):
             main.solution(3)
-        elif any(var in userinput for var in infected):
+        elif any(i in userinput for i in infected):
             main.solution(4)
-        elif any(var in userinput for var in data):
+        elif any(i in userinput for i in data):
             main.solution(5)
-        elif any(var in userinput for var in bootloop):
+        elif any(i in userinput for i in bootloop):
             main.solution(6)
         else:
             print("I could not interpret your problem.\n")
