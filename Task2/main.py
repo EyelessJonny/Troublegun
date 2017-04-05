@@ -14,7 +14,7 @@ class Main:
         offnon = ("SLOW", "CRASH")
         charge = ("OFF", "POWER", "TURN")
         wet = ("WET", "WATER")
-        infected = ("INFECTED", "MALWARE", "AD")
+        infected = ("INFECTED", "MALWARE", "AD", "VIRUS")
         data = ("CORRUPT", "GONE", "WIPE")
         bootloop = ("BOOT", "LOOP")
         userinput = (input("Please enter your issue:\n> ")).upper()
