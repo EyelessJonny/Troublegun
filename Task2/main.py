@@ -17,7 +17,6 @@ class Main:
         infected = ("INFECTED", "MALWARE", "AD")
         data = ("CORRUPT", "GONE", "WIPE")
         bootloop = ("BOOT", "LOOP")
-        kindex = 0
         userinput = (input("Please enter your issue:\n> ")).upper()
 
         if any(i in userinput for i in damaged):
