@@ -25,8 +25,8 @@ class Troublegun:
 
     def quit(self):
         """Quit"""
-        userinput = (input("If you would like to quit Troublegun, please type 'Q', or to "
-                           "restart type 'R'.\n> ")).lower()
+        userinput = (input("If you would like to quit Troublegun, please type 'Q',
+                           "or to restart type 'R'.\n> ")).lower()
         if (userinput == "q"):
             print ("Troublegun Shutting Down...\n")
             exit()
